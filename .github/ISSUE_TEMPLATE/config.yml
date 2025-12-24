@@ -3,6 +3,6 @@ contact_links:
   - name: Discord Community
     url: https://discord.gg/hjUhu33uAn
     about: Join our Discord server for discussions and support (MANDATORY for all contributors)
-  - name: Documentation
-    url: https://github.com/AOSSIE-Org/TODO
-    about: Check our documentation for common questions
+  - name: AOSSIE Website
+    url: https://aossie.org/
+    about: Learn more about AOSSIE and our projects
