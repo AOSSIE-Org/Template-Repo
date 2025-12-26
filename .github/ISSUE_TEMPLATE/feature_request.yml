@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         Thanks for taking the time to suggest a feature! Please fill out the sections below.
-
+        
   - type: textarea
     id: feature-description
     attributes:
@@ -38,5 +38,4 @@ body:
       options:
         - label: I have joined the [Discord server](https://discord.gg/hjUhu33uAn) and will post updates there
           required: true
-        - label: I have searched existing issues to avoid duplicates
-          required: true
+       

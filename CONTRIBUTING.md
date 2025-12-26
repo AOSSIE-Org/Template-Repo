@@ -8,10 +8,6 @@ We welcome contributions from everyone. By participating in this project, you ag
 
 **All project communication MUST happen on Discord. We do not pay attention to GitHub notifications.**
 
-- Join our [Discord server](https://discord.gg/hjUhu33uAn) before starting any work
-- Post your PR/issue updates in the relevant Discord channel (**MANDATORY**)
-- All discussions, questions, and updates should be on Discord
-- GitHub is for code only - Discord is for communication
 
 **PRs without Discord updates will not be reviewed or may face delays.**
 
