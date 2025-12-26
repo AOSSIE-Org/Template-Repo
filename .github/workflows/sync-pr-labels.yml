@@ -9,18 +9,13 @@ on:
 permissions:
   contents: read
   pull-requests: write
-  issues: read
+  issues: write
 
 jobs:
   sync-labels:
     if: ${{ github.repository_owner == 'AOSSIE-Org' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
       - name: Get PR details
         id: pr-details
         uses: actions/github-script@v7
@@ -189,7 +184,72 @@ jobs:
               console.log('No file-based labels matched');
             }
 
-      # STEP 3: Contributor-based labels
+      # STEP 3: PR size labels
+      - name: Apply PR size label
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            
+            // Get PR details to calculate size
+            const pr = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: prNumber
+            });
+            
+            const additions = pr.data.additions;
+            const deletions = pr.data.deletions;
+            const totalChanges = additions + deletions;
+            
+            console.log(`PR has ${additions} additions and ${deletions} deletions (${totalChanges} total changes)`);
+            
+            // Determine size label based on total changes
+            let sizeLabel = '';
+            if (totalChanges <= 10) {
+              sizeLabel = 'size/XS';
+            } else if (totalChanges <= 50) {
+              sizeLabel = 'size/S';
+            } else if (totalChanges <= 200) {
+              sizeLabel = 'size/M';
+            } else if (totalChanges <= 500) {
+              sizeLabel = 'size/L';
+            } else {
+              sizeLabel = 'size/XL';
+            }
+            
+            console.log(`Applying size label: ${sizeLabel}`);
+            
+            // Remove any existing size labels first
+            const currentLabels = await github.rest.issues.listLabelsOnIssue({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber
+            });
+            
+            const sizeLabelsToRemove = currentLabels.data
+              .map(label => label.name)
+              .filter(name => name.startsWith('size/'));
+            
+            for (const label of sizeLabelsToRemove) {
+              await github.rest.issues.removeLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                name: label
+              });
+            }
+            
+            // Apply the new size label
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              labels: [sizeLabel]
+            });
+
+      # STEP 4: Contributor-based labels
       - name: Apply contributor-based labels
         uses: actions/github-script@v7
         env:
