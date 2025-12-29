@@ -1,0 +1,476 @@
+issues:
+  - title: "Documentation: Reframe README"
+    body: |
+      ## Description
+      Create a well-structured and comprehensive README that effectively communicates the project's purpose, features, and usage.
+      
+      ## Tasks
+      - [ ] Add clear project title and description
+      - [ ] Include project logo/banner (if available)
+      - [ ] Add favicon (if applicable)
+      - [ ] Add badges (build status, license, version, Tech stack etc.)
+      - [ ] Write installation instructions
+      - [ ] Add usage examples and code snippets
+      - [ ] Document project features and capabilities
+      - [ ] update contributing guidelines link
+      - [ ] write discord/communication channels
+      - [ ] Add table of contents for easy navigation
+      - [ ] Include screenshots/demo links (if applicable)
+      
+      ## Best Practices
+      - Use clear, concise language
+      - Format with proper Markdown structure
+      - Keep it up-to-date with project changes
+      - Make it beginner-friendly
+      
+      ## Resources
+      - follow the README template(https://github.com/AOSSIE-Org/Template-Repo/blob/main/README_TEMPLATE.md)
+    labels:
+      - documentation
+      - good-first-issue
+      - setup
+
+  - title: "Setup CI/CD Pipeline"
+    body: |
+      ## Description
+      Configure GitHub Actions workflows for continuous integration and deployment.
+      
+      ## Tasks
+      - [ ] Set up build workflow
+      - [ ] Configure automated testing
+      - [ ] Set up deployment pipeline
+      
+      ## Resources
+      - [GitHub Actions Documentation](https://docs.github.com/en/actions)
+    labels:
+      - setup
+      - automation
+      - enhancement
+
+  - title: "Security: Enable Dependabot"
+    body: |
+      ## Description
+      Enable Dependabot for automated dependency updates and security alerts.
+      
+      ## Tasks
+      - [ ] Enable Dependabot alerts
+      - [ ] Enable Dependabot security updates
+      - [ ] Configure Dependabot version updates
+      - [ ] Review and configure .github/dependabot.yml
+      
+      ## Resources
+      - [Dependabot Documentation](https://docs.github.com/en/code-security/dependabot)
+    labels:
+      - security
+      - dependencies
+
+  - title: "Code Quality: Setup Linting"
+    body: |
+      ## Description
+      Configure code linting tools to maintain code quality.
+      
+      ## Tasks
+      - [ ] Configure linter for your language (e.g., ESLint, Flake8)
+      - [ ] Integrate linter into CI pipeline
+      - [ ] Update CONTRIBUTING.md with code style guidelines
+      
+      ## Resources
+      - Check CONTRIBUTING.md for details
+    labels:
+      - code-quality
+      - setup
+
+  - title: "Documentation: Complete Project Setup"
+    body: |
+      ## Description
+      Complete the project documentation and setup.
+      
+      ## Tasks
+      - [ ] Update README.md with project details
+      - [ ] Add project description and badges
+      - [ ] Document installation steps
+      - [ ] Add usage examples
+      - [ ] Set up wiki (if needed)
+      
+      ## Resources
+      - Review existing documentation templates
+    labels:
+      - documentation
+      - setup
+
+  - title: "Frontend: Add Required Footer Elements(if applicable)"
+    body: |
+      ## Description
+      If this is a frontend project, ensure it has a proper footer with all required elements.
+      
+      ## Tasks
+      - [ ] Verify footer exists on all pages
+      - [ ] Add copyright statement: "© 2025 AOSSIE"
+      - [ ] Add "KYA (Know Your Assumptions)" link/element
+      - [ ] Ensure footer is consistent across all pages
+      
+      ## Requirements
+      All AOSSIE frontends must include:
+      - Copyright statement: `© 2025 AOSSIE`
+      - KYA (Know Your Assumptions)
+      
+      ## Resources
+      - [Bene](https://ergo.bene.stability.nexus/) for Ergo is a project that does KYA very nicely, as a modal that is shown when the user first visits the website and also when the user clicks the link in the footer. We should follow this approach.
+      - [KYA Template](https://github.com/StabilityNexus/Info/blob/main/KYA.md) - Use this template for creating your KYA content.
+      
+      **Note**: If this is not a frontend project, you can close this issue.
+    labels:
+      - frontend
+      - documentation
+      - setup
+
+  - title: "Frontend: Setup Social Share Button (if applicable)"
+    body: |
+      ## Description
+      If this is a frontend project, integrate the AOSSIE Social Share Button to allow users to easily share content across multiple social platforms.
+      
+      ## Tasks
+      - [ ] Install the SocialShareButton package
+      - [ ] Configure share button with appropriate platforms
+      - [ ] Customize button styling to match project theme
+      - [ ] Add share button to relevant pages/components
+      - [ ] Test sharing functionality across different platforms
+      - [ ] Add documentation for share button usage
+      
+      ## About
+      The Social Share Button is a lightweight JavaScript library that enables easy sharing to multiple social platforms including Facebook, Twitter, LinkedIn, Reddit, WhatsApp, Telegram, and more.
+      
+      ## Resources
+      - [AOSSIE Social Share Button Repository](https://github.com/AOSSIE-Org/SocialShareButton)
+      - Check the README for installation and configuration instructions
+      
+      **Note**: If this is not a frontend project, you can close this issue.
+    labels:
+      - frontend
+      - enhancement
+      - setup
+
+  - title: "Frontend: Implement Responsive Design for Mobile (if applicable)"
+    body: |
+      ## Description
+      Ensure the frontend displays properly across all screen sizes, especially mobile devices. Many AOSSIE projects have frontends where element sizes do not adjust well for smaller screens.
+      
+      ## Tasks
+      - [ ] Audit all pages for mobile responsiveness
+      - [ ] Implement responsive CSS using media queries or modern frameworks
+      - [ ] Test on various screen sizes (mobile, tablet, desktop)
+      - [ ] Ensure touch-friendly interactive elements (minimum 44x44px)
+      - [ ] Fix any text overflow or layout breaking issues
+      - [ ] Optimize images for different screen sizes
+      - [ ] Test on actual mobile devices (iOS and Android)
+      - [ ] Ensure proper viewport meta tag is set
+      - [ ] Verify navigation/menu works well on mobile
+      - [ ] Check that all buttons and forms are easily usable on mobile
+      
+      ## Best Practices
+      - Use mobile-first approach
+      - Use relative units (rem, em, %, vw, vh) instead of fixed pixels
+      - Test across multiple devices and browsers
+      - Consider using CSS frameworks with built-in responsiveness
+      - Ensure proper spacing and padding for touch targets
+      
+      ## Resources
+      - [Responsive Web Design Basics](https://web.dev/responsive-web-design-basics/)
+      - [MDN Responsive Design Guide](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design)
+      
+      **Note**: If this is not a frontend project, you can close this issue.
+    labels:
+      - frontend
+      - enhancement
+      - mobile
+      - ux
+
+  - title: "Frontend: Improve SEO (Search Engine Optimization) (if applicable)"
+    body: |
+      ## Description
+      Implement SEO best practices to improve search engine visibility and ranking. Ensure metadata, indexing, and content signals are properly configured.
+      
+      ## Tasks
+      - [ ] Add proper meta tags (title, description, keywords)
+      - [ ] Implement Open Graph tags for social media sharing
+      - [ ] Add Twitter Card meta tags
+      - [ ] Create and submit sitemap.xml
+      - [ ] Configure robots.txt properly
+      - [ ] Add canonical URLs to prevent duplicate content
+      - [ ] Implement structured data (Schema.org markup)
+      - [ ] Optimize page titles and headings (H1, H2, etc.)
+      - [ ] Add alt text to all images
+      - [ ] Ensure proper internal linking structure
+      - [ ] Optimize page load speed (affects SEO ranking)
+      - [ ] Make site mobile-friendly (mobile-first indexing)
+      - [ ] Use semantic HTML5 elements
+      - [ ] Add favicon and app icons
+      - [ ] Test with Google Search Console
+      - [ ] Verify with SEO audit tools
+      
+      ## Best Practices
+      - Keep meta descriptions under 160 characters
+      - Use descriptive, keyword-rich titles (50-60 characters)
+      - Ensure content is unique and valuable
+      - Use HTTPS (secure connections)
+      - Optimize for Core Web Vitals (LCP, FID, CLS)
+      
+      ## Resources
+      - [Google SEO Starter Guide](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)
+      - [MDN SEO Basics](https://developer.mozilla.org/en-US/docs/Glossary/SEO)
+      - [Schema.org Documentation](https://schema.org/)
+      - [Google Search Console](https://search.google.com/search-console)
+      
+      **Note**: If this is not a frontend project, you can close this issue.
+    labels:
+      - frontend
+      - enhancement
+      - seo
+
+  - title: "Blockchain: Add Token List Support for ERC20 Selection (if applicable)"
+    body: |
+      ## Description
+      If this is an EVM-based blockchain project that allows users to deploy contracts with custom ERC20 tokens, improve the user experience by allowing users to select tokens from a curated list in addition to manually inputting contract addresses.
+      
+      ## Context
+      Currently, some AOSSIE EVM-based projects only support manual ERC20 contract address input. Users should also be able to choose from a pre-populated list of supported tokens for better UX.
+      
+      ## Tasks
+      - [ ] Check if this project involves ERC20 token selection for contract deployment
+      - [ ] Integrate the StabilityNexus TokenList
+      - [ ] Implement UI dropdown/selector for supported tokens
+      - [ ] Keep the option for manual contract address input
+      - [ ] Validate manually entered contract addresses
+      - [ ] Add token logo/icon display in the selector
+      - [ ] Implement token search/filter functionality
+      - [ ] Add proper error handling for invalid addresses
+      - [ ] Test with various tokens from the list
+      - [ ] Update documentation with new token selection feature
+      
+      ## Benefits
+      - Improved user experience
+      - Reduced errors from manual address input
+      - Visual token identification with logos
+      - Faster token selection
+      
+      ## Resources
+      - [StabilityNexus TokenList](https://github.com/StabilityNexus/TokenList) - Check README for integration details and supported tokens
+      
+      **Note**: If this is not an EVM-based blockchain project, you can close this issue.
+    labels:
+      - blockchain
+      - enhancement
+      - ux
+
+  - title: "Backend: Implement Consistent Error Handling"
+    body: |
+      ## Description
+      Standardize error handling across the entire application (backend and frontend) to ensure consistent user experience and easier debugging.
+      
+      ## Tasks
+      - [ ] Define standard error response format (status code, message, error code)
+      - [ ] Implement centralized error handling middleware/utilities
+      - [ ] Create custom error classes for different error types
+      - [ ] Add proper HTTP status codes for all error scenarios
+      - [ ] Implement user-friendly error messages for frontend
+      - [ ] Add detailed error logging for debugging
+      - [ ] Handle validation errors consistently
+      - [ ] Implement global error boundaries (frontend)
+      - [ ] Add error monitoring/tracking integration
+      - [ ] Document error codes and their meanings
+      - [ ] Test error scenarios thoroughly
+      
+      ## Best Practices
+      - Never expose sensitive information in error messages
+      - Use appropriate HTTP status codes
+      - Log errors with context (request ID, user ID, timestamp)
+      - Provide actionable error messages to users
+      - Differentiate between client and server errors
+      
+      ## Resources
+      - [HTTP Status Codes Guide](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+      - [Error Handling Best Practices](https://www.freecodecamp.org/news/error-handling-in-javascript/)
+    labels:
+      - backend
+      - enhancement
+      - good-first-issue
+
+  - title: "Backend: Add API Rate Limiting (if applicable)"
+    body: |
+      ## Description
+      Implement rate limiting on API endpoints to prevent abuse, DDoS attacks, and ensure fair usage across all users.
+      
+      ## Tasks
+      - [ ] Identify endpoints that need rate limiting
+      - [ ] Choose rate limiting strategy (IP-based, user-based, or both)
+      - [ ] Implement rate limiting middleware
+      - [ ] Define rate limits for different endpoint types
+      - [ ] Add proper HTTP 429 responses when limit exceeded
+      - [ ] Include rate limit headers (X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset)
+      - [ ] Implement different tiers for authenticated vs anonymous users
+      - [ ] Add rate limit monitoring and alerts
+      - [ ] Document rate limits in API documentation
+      - [ ] Test rate limiting behavior
+      - [ ] Consider implementing exponential backoff suggestions
+      
+      ## Recommended Limits
+      - Public endpoints: 100 requests per 15 minutes
+      - Authenticated users: 1000 requests per hour
+      - Admin/privileged users: Higher or no limits
+      
+      ## Resources
+      - [Rate Limiting Strategies](https://cloud.google.com/architecture/rate-limiting-strategies-techniques)
+      
+      **Note**: If this project doesn't have an API backend, you can close this issue.
+    labels:
+      - backend
+      - security
+      - enhancement
+
+  - title: "Blockchain: Comprehensive Smart Contract Testing (if applicable)"
+    body: |
+      ## Description
+      Implement thorough unit and integration tests for all smart contracts to ensure security, correctness, and reliability.
+      
+      ## Tasks
+      - [ ] Setup testing framework (Hardhat, Foundry, or Truffle)
+      - [ ] Write unit tests for all contract functions
+      - [ ] Test edge cases and boundary conditions
+      - [ ] Implement integration tests for contract interactions
+      - [ ] Test access control and permission mechanisms
+      - [ ] Test event emissions
+      - [ ] Add gas consumption tests
+      - [ ] Test upgrade mechanisms (if upgradeable contracts)
+      - [ ] Implement fuzzing tests for critical functions
+      - [ ] Test failure scenarios and reverts
+      - [ ] Achieve minimum 90% code coverage
+      - [ ] Add continuous testing in CI/CD pipeline
+      - [ ] Document test scenarios and expected behaviors
+      
+      ## Test Categories
+      - Unit tests for individual functions
+      - Integration tests for multi-contract scenarios
+      - Fork tests against mainnet state
+      - Invariant/property-based tests
+      
+      ## Resources
+      - [Hardhat Testing Guide](https://hardhat.org/tutorial/testing-contracts)
+      - [Foundry Testing](https://book.getfoundry.sh/forge/tests)
+      - [Smart Contract Testing Best Practices](https://ethereum.org/en/developers/docs/smart-contracts/testing/)
+      
+      **Note**: If this project doesn't involve smart contracts, you can close this issue.
+    labels:
+      - blockchain
+      - testing
+      - security
+
+  - title: "Blockchain: Gas Optimization Audit (if applicable)"
+    body: |
+      ## Description
+      Audit and optimize smart contract gas usage to reduce transaction costs for users. This is an ongoing task where community members can continuously suggest optimizations.
+      
+      ## Tasks
+      - [ ] Run gas reporter on all contract functions
+      - [ ] Identify gas-heavy operations
+      - [ ] Optimize storage usage (use packed structs, minimize storage writes)
+      - [ ] Use memory instead of storage where appropriate
+      - [ ] Optimize loops and iterations
+      - [ ] Use appropriate data types (uint256 vs smaller types)
+      - [ ] Remove unnecessary operations and redundant checks
+      - [ ] Consider using libraries for common operations
+      - [ ] Batch operations where possible
+      - [ ] Optimize modifier usage
+      - [ ] Use events instead of storage for historical data
+      - [ ] Document gas costs for major operations
+      - [ ] Compare gas usage before/after optimizations
+      
+      ## Ongoing Optimization
+      This issue can remain open for community members to continuously suggest and implement gas optimizations as new patterns emerge.
+      
+      ## Resources
+      - [Gas Optimization Techniques](https://www.rareskills.io/post/gas-optimization)
+      - [OpenZeppelin Gas Optimization Tips](https://docs.openzeppelin.com/contracts/4.x/api/utils)
+      
+      **Note**: If this project doesn't involve smart contracts, you can close this issue.
+    labels:
+      - blockchain
+      - optimization
+      - help-wanted
+
+  - title: "Blockchain: Security Audit Checklist (if applicable)"
+    body: |
+      ## Description
+      Review smart contracts for common vulnerabilities and security issues to ensure safe deployment and operation.
+      
+      ## Security Checks
+      - [ ] Reentrancy protection (use ReentrancyGuard)
+      - [ ] Integer overflow/underflow (use SafeMath or Solidity 0.8+)
+      - [ ] Access control mechanisms properly implemented
+      - [ ] Input validation on all external functions
+      - [ ] Check for unchecked return values
+      - [ ] Verify proper use of tx.origin vs msg.sender
+      - [ ] Review delegatecall usage for security
+      - [ ] Check for front-running vulnerabilities
+      - [ ] Verify timestamp dependence issues
+      - [ ] Review randomness generation (avoid block.timestamp)
+      - [ ] Check for denial of service vulnerabilities
+      - [ ] Verify proper event logging
+      - [ ] Review upgrade mechanisms (if proxy pattern used)
+      - [ ] Check for signature replay attacks
+      - [ ] Verify proper handling of ETH/token transfers
+      
+      ## Audit Steps
+      - [ ] Run automated security tools (Slither, Mythril, etc.)
+      - [ ] Manual code review by team members
+      - [ ] Consider professional third-party audit
+      - [ ] Create security documentation
+      - [ ] Setup bug bounty program
+      
+      ## Resources
+      - [Smart Contract Security Best Practices](https://consensys.github.io/smart-contract-best-practices/)
+      - [SWC Registry - Vulnerability Classification](https://swcregistry.io/)
+      - [OpenZeppelin Security Tools](https://www.openzeppelin.com/security-audits)
+      - [Slither Documentation](https://github.com/crytic/slither)
+      
+      **Note**: If this project doesn't involve smart contracts, you can close this issue.
+    labels:
+      - blockchain
+      - security
+      - critical
+
+  - title: "Blockchain: Handle Network Switching Gracefully (if applicable)"
+    body: |
+      ## Description
+      If this is a blockchain frontend project, implement proper handling when users switch networks in their wallet to ensure smooth user experience and prevent errors.
+      
+      ## Tasks
+      - [ ] Detect network changes in wallet
+      - [ ] Display current network to user
+      - [ ] Show warning when user is on wrong network
+      - [ ] Implement automatic network switching prompt
+      - [ ] Handle unsupported networks gracefully
+      - [ ] Pause/disable actions when on wrong network
+      - [ ] Update UI state when network changes
+      - [ ] Re-fetch data after network switch
+      - [ ] Clear cached data specific to previous network
+      - [ ] Test switching between different networks
+      - [ ] Add network configuration for all supported chains
+      - [ ] Implement fallback RPC endpoints
+      - [ ] Display network-specific information (gas prices, block time)
+      
+      ## Best Practices
+      - Never assume the network won't change
+      - Always validate network before transactions
+      - Provide clear feedback about required network
+      - Store network-specific data separately
+      
+      ## Resources
+      - [MetaMask Network Detection](https://docs.metamask.io/wallet/how-to/detect-network/)
+      - [Wagmi Network Handling](https://wagmi.sh/react/hooks/useNetwork)
+      
+      **Note**: If this is not a blockchain frontend project, you can close this issue.
+    labels:
+      - blockchain
+      - frontend
+      - enhancement
+      - ux

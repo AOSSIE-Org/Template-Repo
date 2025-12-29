@@ -1,0 +1,77 @@
+name: Create Initial Issues
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+jobs:
+  create-issues:
+    runs-on: ubuntu-latest
+    if: ${{ github.repository_owner == 'AOSSIE-Org' }}
+    permissions:
+      contents: write
+      issues: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check if issues file exists
+        id: check_file
+        run: |
+          if [ -f ".github/initial-issues.yml" ]; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "Issues file not found. Skipping..."
+          fi
+
+      - name: Create issues from YAML
+        if: steps.check_file.outputs.exists == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const yaml = require('js-yaml');
+            const fs = require('fs');
+            
+            // Read and parse the issues YAML file
+            const issuesData = yaml.load(fs.readFileSync('.github/initial-issues.yml', 'utf8'));
+            
+            console.log(`Creating ${issuesData.issues.length} issues...`);
+            
+            // Create each issue
+            for (const issue of issuesData.issues) {
+              try {
+                const response = await github.rest.issues.create({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  title: issue.title,
+                  body: issue.body,
+                  labels: issue.labels || []
+                });
+                console.log(`✓ Created issue #${response.data.number}: ${issue.title}`);
+              } catch (error) {
+                console.error(`✗ Failed to create issue "${issue.title}":`, error.message);
+              }
+            }
+            
+            console.log('All issues created successfully!');
+
+      - name: Delete issues file and workflow
+        if: steps.check_file.outputs.exists == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Delete the files
+          git rm .github/initial-issues.yml
+          git rm .github/workflows/create-initial-issues.yml
+          
+          # Commit the changes
+          git commit -m "chore: cleanup initial issues automation files"
+          
+          # Push the changes
+          git push
