@@ -1,10 +1,4 @@
-## Pull Request
-
-###  Description:
-<!-- Provide a clear and concise description of your changes -->
-
-
-###  Related Issue:
+###  Addressed Issue:
 <!-- Link the issue this PR addresses -->
 Fixes #(issue number)
 
@@ -22,7 +16,7 @@ Fixes #(issue number)
 - [ ] My code follows the project's code style and conventions
 - [ ] I have made corresponding changes to the documentation
 - [ ] My changes generate no new warnings or errors
-- [ ] I have joined the [Discord server](https://discord.gg/hjUhu33uAn)
+- [ ] I have joined the [Discord server](https://discord.gg/hjUhu33uAn) and I will share a link to this PR with the project maintainers there
 - [ ] I have read the [Contributing Guidelines](./CONTRIBUTING.md)
 
 ## ⚠️ AI Notice - Important!
