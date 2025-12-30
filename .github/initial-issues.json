@@ -46,18 +46,8 @@
       ]
     },
     {
-      "title": "CI/CD: Configure Automated Testing",
-      "body": "## Description\nSet up automated testing in CI pipeline to run tests on every commit.\n\n## Tasks\n- [ ] Create test workflow file\n- [ ] Configure test environment\n- [ ] Set up test coverage reporting\n- [ ] Add coverage badge to README\n- [ ] Configure test failure notifications\n\n## Resources\n- [GitHub Actions Documentation](https://docs.github.com/en/actions)\n",
-      "labels": [
-        "setup",
-        "automation",
-        "testing",
-        "ci-cd"
-      ]
-    },
-    {
-      "title": "CI/CD: Set up Deployment Pipeline",
-      "body": "## Description\nConfigure automated deployment workflow for production/staging environments.\n\n## Tasks\n- [ ] Create deployment workflow\n- [ ] Configure deployment triggers\n- [ ] Set up environment variables and secrets\n- [ ] Add deployment approval gates if needed\n- [ ] Test deployment process\n\n## Resources\n- [GitHub Actions Documentation](https://docs.github.com/en/actions)\n",
+      "title": "CI/CD: Set up Deployment Pipeline (GitHub Pages for frontend-only projects)",
+      "body": "## Description\nConfigure automated deployment workflow for production/staging environments.  For backend-free frontend projects, deploy to GitHub Pages.\n\n## Tasks\n- [ ] Create deployment workflow\n- [ ] Configure deployment triggers\n- [ ] For frontend-only projects:  Set up GitHub Pages deployment\n- [ ] For projects with backend:  Configure deployment to appropriate hosting service\n- [ ] Set up environment-specific configurations\n- [ ] Add deployment status checks\n- [ ] Test deployment process\n- [ ] Document deployment procedures\n\n## Notes\n- Frontend-only projects should use GitHub Pages for free hosting\n- Projects with backends should specify their deployment target (Heroku, AWS, etc.)",
       "labels": [
         "setup",
         "automation",
