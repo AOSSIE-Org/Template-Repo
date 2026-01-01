@@ -1,7 +1,7 @@
 name: Good First Issue
 description: A beginner-friendly issue to get started with contributing
 title: "[GOOD FIRST ISSUE]: "
-labels: ["good first issue"]
+labels: ["good first issue", "triage-needed"]
 body:
   - type: markdown
     attributes:
