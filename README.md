@@ -1,74 +1,78 @@
-<!-- Don't delete it -->
 <div name="readme-top"></div>
 
-<!-- Organization Logo -->
-<div align="center" style="display: flex; align-items: center; justify-content: center; gap: 16px;">
-  <img alt="AOSSIE" src="public/aossie-logo.svg" width="175">
-  <img src="public/todo-project-logo.svg" width="175" />
+<!-- Organization Logos -->
+<div align="center" style="display:flex;align-items:center;justify-content:center;gap:16px;">
+  <a href="https://aossie.org" target="_blank">
+    <img alt="AOSSIE Logo" src="public/aossie-logo.svg" width="170">
+  </a>
+
+  <a href="#readme-top">
+    <img alt="Project Logo" src="public/todo-project-logo.svg" width="170">
+  </a>
 </div>
 
 &nbsp;
 
-<!-- Organization Name -->
+<!-- Project Website Badge -->
 <div align="center">
-
-[![Static Badge](https://img.shields.io/badge/aossie.org/TODO-228B22?style=for-the-badge&labelColor=FFC517)](https://TODO.aossie.org/)
-
-<!-- Correct deployed url to be added -->
-
+[![Project Website](https://img.shields.io/badge/aossie.org/YourProjectName-228B22?style=for-the-badge&labelColor=FFC517)](https://yourproject.aossie.org/)
 </div>
 
-<!-- Organization/Project Social Handles -->
+<!-- Social & Communication Channels -->
 <p align="center">
-<!-- Telegram -->
 <a href="https://t.me/StabilityNexus">
-<img src="https://img.shields.io/badge/Telegram-black?style=flat&logo=telegram&logoColor=white&logoSize=auto&color=24A1DE" alt="Telegram Badge"/></a>
-&nbsp;&nbsp;
-<!-- X (formerly Twitter) -->
+<img src="https://img.shields.io/badge/Telegram-24A1DE?style=flat&logo=telegram&logoColor=white" alt="Telegram"/></a>
+&nbsp;
 <a href="https://x.com/aossie_org">
-<img src="https://img.shields.io/twitter/follow/aossie_org" alt="X (formerly Twitter) Badge"/></a>
-&nbsp;&nbsp;
-<!-- Discord -->
+<img src="https://img.shields.io/twitter/follow/aossie_org" alt="X"/></a>
+&nbsp;
 <a href="https://discord.gg/hjUhu33uAn">
-<img src="https://img.shields.io/discord/1022871757289422898?style=flat&logo=discord&logoColor=white&logoSize=auto&label=Discord&labelColor=5865F2&color=57F287" alt="Discord Badge"/></a>
-&nbsp;&nbsp;
-<!-- Medium -->
+<img src="https://img.shields.io/discord/1022871757289422898?style=flat&logo=discord&logoColor=white&label=Discord" alt="Discord"/></a>
+&nbsp;
 <a href="https://news.stability.nexus/">
-  <img src="https://img.shields.io/badge/Medium-black?style=flat&logo=medium&logoColor=black&logoSize=auto&color=white" alt="Medium Badge"></a>
-&nbsp;&nbsp;
-<!-- LinkedIn -->
+<img src="https://img.shields.io/badge/Medium-white?style=flat&logo=medium&logoColor=black" alt="Medium"/></a>
+&nbsp;
 <a href="https://www.linkedin.com/company/aossie/">
-  <img src="https://img.shields.io/badge/LinkedIn-black?style=flat&logo=LinkedIn&logoColor=white&logoSize=auto&color=0A66C2" alt="LinkedIn Badge"></a>
-&nbsp;&nbsp;
-<!-- Youtube -->
+<img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+&nbsp;
 <a href="https://www.youtube.com/@StabilityNexus">
-  <img src="https://img.shields.io/youtube/channel/subscribers/UCZOG4YhFQdlGaLugr_e5BKw?style=flat&logo=youtube&logoColor=white&logoSize=auto&labelColor=FF0000&color=FF0000" alt="Youtube Badge"></a>
+<img src="https://img.shields.io/youtube/channel/subscribers/UCZOG4YhFQdlGaLugr_e5BKw?style=flat&logo=youtube&logoColor=white" alt="YouTube"/></a>
 </p>
 
 ---
 
-<div align="center">
-<h1>TODO: Project Name</h1>
-</div>
+# Your Project Name
+**Your Project Name** is a reusable project template maintained by **AOSSIE** to help teams quickly bootstrap, document, and scale open-source projects with a consistent structure, best practices, and community standards.
 
-[TODO](https://TODO.stability.nexus/) is a ... TODO: Project Description.
+This repository is intended to be **forked and customized** for new projects.
+
+---
+
+## 📌 Table of Contents
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Project Checklist](#-project-checklist)
+- [Repository Structure](#-repository-structure)
+- [Architecture Diagram](#-architecture-diagram)
+- [User Flow](#-user-flow)
+- [Getting Started](#-getting-started)
+- [App Screenshots](#-app-screenshots)
+- [Contributing](#-contributing)
+- [Maintainers](#-maintainers)
+- [License](#-license)
 
 ---
 
 ## 🚀 Features
-
-TODO: List your main features here:
-
-- **Feature 1**: Description
-- **Feature 2**: Description
-- **Feature 3**: Description
-- **Feature 4**: Description
+- **Standardized Structure** — Clear separation of frontend, backend, and documentation.
+- **Contributor Friendly** — Guidelines, PR templates, and community channels.
+- **Scalable by Design** — Supports Web, AI/ML, and Blockchain projects.
+- **Production Ready Docs** — Architecture, user flow, and checklist included.
+- **Community Driven** — Integration with AOSSIE communication platforms.
 
 ---
 
 ## 💻 Tech Stack
-
-TODO: Update based on your project
 
 ### Frontend
 - React / Next.js / Flutter / React Native
@@ -77,56 +81,51 @@ TODO: Update based on your project
 
 ### Backend
 - Flask / FastAPI / Node.js / Supabase
-- Database: PostgreSQL / SQLite / MongoDB
+- Databases: PostgreSQL / SQLite / MongoDB
 
-### AI/ML (if applicable)
+### AI / ML (Optional)
 - LangChain / LangGraph / LlamaIndex
-- Google Gemini / OpenAI / Anthropic Claude
-- Vector Database: Weaviate / Pinecone / Chroma
-- RAG / Prompt Engineering / Agent Frameworks
+- OpenAI / Google Gemini / Anthropic Claude
+- Vector DBs: Pinecone / Weaviate / Chroma
 
-### Blockchain (if applicable)
-- Solidity / solana / cardano / ergo Smart Contracts
-- Hardhat / Truffle / foundry
-- Web3.js / Ethers.js / Wagmi
-- OpenZeppelin / alchemy / Infura
+### Blockchain (Optional)
+- Solidity / Solana / Cardano
+- Hardhat / Truffle / Foundry
+- Ethers.js / Web3.js / Wagmi
 
 ---
 
 ## ✅ Project Checklist
+- **Protocol (if applicable)**
+  - [ ] Formally specified
+  - [ ] Properties proven
+  - [ ] Verified
 
-TODO: Complete applicable items based on your project type
+- **Smart Contracts (if applicable)**
+  - [ ] Audited
+  - [ ] Deployment documented
 
-- [ ] **The protocol** (if applicable):
-   - [ ] has been described and formally specified in a paper.
-   - [ ] has had its main properties mathematically proven.
-   - [ ] has been formally verified.
-- [ ] **The smart contracts** (if applicable):
-   - [ ] were thoroughly reviewed by at least two knights of The Stable Order.
-   - [ ] were deployed to: [Add deployment details]
-- [ ] **The mobile app** (if applicable):
-   - [ ] has an _About_ page containing the Stability Nexus's logo and pointing to the social media accounts of the Stability Nexus.
-   - [ ] is available for download as a release in this repo.
-   - [ ] is available in the relevant app stores.
-- [ ] **The AI/ML components** (if applicable):
-   - [ ] LLM/model selection and configuration are documented.
-   - [ ] Prompts and system instructions are version-controlled.
-   - [ ] Content safety and moderation mechanisms are implemented.
-   - [ ] API keys and rate limits are properly managed.
+- **Mobile App (if applicable)**
+  - [ ] About page included
+  - [ ] Release published
+  - [ ] App store availability
+
+- **AI / ML (if applicable)**
+  - [ ] Model configuration documented
+  - [ ] Prompt versioning enabled
+  - [ ] Safety and rate limits implemented
 
 ---
 
-## 🔗 Repository Links
-
-TODO: Update with your repository structure
-
+## 🔗 Repository Structure
 1. [Main Repository](https://github.com/AOSSIE-Org/TODO)
-2. [Frontend](https://github.com/AOSSIE-Org/TODO/tree/main/frontend) (if separate)
-3. [Backend](https://github.com/AOSSIE-Org/TODO/tree/main/backend) (if separate)
+2. [Frontend Directory](./frontend)
+3. [Backend Directory](./backend)
 
 ---
 
 ## 🏗️ Architecture Diagram
+
 
 TODO: Add your system architecture diagram here
 
@@ -148,57 +147,41 @@ Example structure to include:
 - Data flow between components
 
 ---
-
 ## 🔄 User Flow
 
-TODO: Add user flow diagrams showing how users interact with your application
+Describe how users interact with the application.
 
 ```
-[User Flow Diagram Placeholder]
+[ User Flow Diagram Placeholder ]
 ```
+Example User Journeys:
 
-### Key User Journeys
-
-TODO: Document main user flows:
-
-1. **User Journey 1**: Description
-   - Step 1
-   - Step 2
-   - Step 3
-
-2. **User Journey 2**: Description
-   - Step 1
-   - Step 2
-   - Step 3
-
-3. **User Journey 3**: Description
-   - Step 1
-   - Step 2
-   - Step 3
+1. User signs up → accesses dashboard → performs main action
+2. Admin manages content → reviews analytics
+3. Contributor submits update → PR reviewed → merged
 
 ---
 
-## �🍀 Getting Started
+## 🍀 Getting Started
 
 ### Prerequisites
 
-TODO: List what developers need installed
+Ensure you have the following installed:
 
-- Node.js 18+ / Python 3.9+ / Flutter SDK
-- npm / yarn / pnpm
-- [Any specific tools or accounts needed]
+- **Node.js 18+** (required)
+- **npm / yarn / pnpm** (any one package manager)
+- **Python 3.9+** (only if backend or AI modules are used)
+- Required API keys (if applicable)
+
+---
 
 ### Installation
 
-TODO: Provide detailed setup instructions
-
 #### 1. Clone the Repository
-
 ```bash
 git clone https://github.com/AOSSIE-Org/TODO.git
 cd TODO
 ```
-
 #### 2. Install Dependencies
 
 ```bash
@@ -209,17 +192,7 @@ yarn install
 pnpm install
 ```
 
-#### 3. Configure Environment Variables(.env.example)
-
-Create a `.env` file in the root directory:
-
-```env
-# Add your environment variables here
-API_KEY=your_api_key
-DATABASE_URL=your_database_url
-```
-
-#### 4. Run the Development Server
+#### 3. Run the Development Server
 
 ```bash
 npm run dev
@@ -229,52 +202,49 @@ yarn dev
 pnpm dev
 ```
 
-#### 5. Open your Browser
+#### 4. Open in Browser
 
-Navigate to [http://localhost:3000](http://localhost:3000) to see the application.
-
-For detailed setup instructions, please refer to our [Installation Guide](./docs/INSTALL_GUIDE.md) (if you have one).
-
----
+Visit: http://localhost:3000
 
 ## 📱 App Screenshots
 
-TODO: Add screenshots showcasing your application
+> Replace the placeholders below with real screenshots or GIFs.
 
-|  |  |  |
-|---|---|---|
-| Screenshot 1 | Screenshot 2 | Screenshot 3 |
+| Overview | Feature | Workflow |
+|--------|--------|----------|
+| ![Overview](docs/screenshots/overview.png) | ![Feature](docs/screenshots/feature.png) | ![Workflow](docs/screenshots/workflow.png) |
 
 ---
 
 ## 🙌 Contributing
 
-⭐ Don't forget to star this repository if you find it useful! ⭐
+⭐ Star this repository if you find it useful!
 
-Thank you for considering contributing to this project! Contributions are highly appreciated and welcomed. To ensure smooth collaboration, please refer to our [Contribution Guidelines](./CONTRIBUTING.md).
+Contributions are welcome. Please read the
+👉 [CONTRIBUTING.md](./CONTRIBUTING.md)
+
+before submitting a pull request.
+
+💬 Join our Discord or Telegram channels for discussions and support.
 
 ---
 
 ## ✨ Maintainers
 
-TODO: Add maintainer information
 
-- [Maintainer Name](https://github.com/username)
-- [Maintainer Name](https://github.com/username)
-
+[Maintainer Name](https://github.com/username)
+[Maintainer Name](https://github.com/username)
 ---
 
 ## 📍 License
 
 This project is licensed under the GNU General Public License v3.0.
-See the [LICENSE](LICENSE) file for details.
+See the [LICENSE](./LICENSE)
+ file for details.
 
 ---
-
 ## 💪 Thanks To All Contributors
 
-Thanks a lot for spending your time helping TODO grow. Keep rocking 🥂
+Thank you for helping this project grow 🚀
 
-[![Contributors](https://contrib.rocks/image?repo=AOSSIE-Org/TODO)](https://github.com/AOSSIE-Org/TODO/graphs/contributors)
-
-© 2025 AOSSIE 
+© 2025 AOSSIE
