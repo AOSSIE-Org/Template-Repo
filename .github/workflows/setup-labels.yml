@@ -135,11 +135,15 @@ jobs:
             console.log('='.repeat(60));
             console.log(`Total labels to create: ${requiredLabels.length}\n`);
             
-            // Get existing labels
-            const { data: existingLabels } = await github.rest.issues.listLabelsForRepo({
-              owner: context.repo.owner,
-              repo: context.repo.repo
-            });
+            // Get existing labels with pagination
+            const existingLabels = await github.paginate(
+              github.rest.issues.listLabelsForRepo,
+              {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                per_page: 100
+              }
+            );
             
             const existingLabelNames = existingLabels.map(label => label.name);
             
@@ -196,7 +200,10 @@ jobs:
             console.log(`❌ Failed:   ${failed}`);
             console.log('='.repeat(60));
             
-            if (created > 0 || updated > 0) {
+            // Fail the step if any labels failed to create/update
+            if (failed > 0) {
+              core.setFailed(`Label setup failed! ${failed} label(s) could not be created or updated.`);
+            } else if (created > 0 || updated > 0) {
               console.log('\n🎉 Label setup complete! Your repository is ready.');
             } else {
               console.log('\n✨ All labels are already up to date.');
