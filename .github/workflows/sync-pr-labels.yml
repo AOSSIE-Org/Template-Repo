@@ -290,7 +290,7 @@ jobs:
                 if (commits.data.length <= 1) {
                   contributorLabels.push('first-time-contributor');
                 } else {
-                  contributorLabels.push('external-contributor');
+                  contributorLabels.push('repeat-contributor');
                 }
               }
               
