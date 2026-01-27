@@ -1,8 +1,6 @@
 name: Sync PR Labels
 
 on:
-  pull_request:
-    types: [opened, reopened, synchronize, edited]
   pull_request_target:
     types: [opened, reopened, synchronize, edited]
 
@@ -249,7 +247,7 @@ jobs:
               labels: [sizeLabel]
             });
 
-      # STEP 4: Contributor-based labels
+      # STEP 4: Contributor-based labels(in this later we can add logic of team p as discussed on discord)
       - name: Apply contributor-based labels
         uses: actions/github-script@v7
         env:
@@ -270,14 +268,8 @@ jobs:
               
               const contributorLabels = [];
               
-              // Determine contributor type based on commit count
-              if (commits.data.length <= 1) {
-                contributorLabels.push('first-time-contributor');
-              } else {
-                contributorLabels.push('external-contributor');
-              }
-              
-              // Maintainer check
+              // First check if maintainer
+              let isMaintainer = false;
               try {
                 const permissionLevel = await github.rest.repos.getCollaboratorPermissionLevel({
                   owner: context.repo.owner,
@@ -287,9 +279,19 @@ jobs:
                 
                 if (['admin', 'maintain'].includes(permissionLevel.data.permission)) {
                   contributorLabels.push('maintainer');
+                  isMaintainer = true;
                 }
               } catch (error) {
                 console.log('Could not check collaborator status');
+              }
+              
+              // If not maintainer, check contributor type
+              if (!isMaintainer) {
+                if (commits.data.length <= 1) {
+                  contributorLabels.push('first-time-contributor');
+                } else {
+                  contributorLabels.push('external-contributor');
+                }
               }
               
               if (contributorLabels.length > 0) {
