@@ -1,0 +1,35 @@
+version: 2
+updates:
+  # 1. Maintain GitHub Actions (CI/CD workflows)
+  # Keeps your builds secure and reliable
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    # Adds the 'dependencies' label so Release Drafter categorizes it correctly
+    labels:
+      - "dependencies"
+      - "github-actions"
+
+  # 2. Maintain NPM (Frontend/JavaScript)
+  # Based on 'npm install' in your CONTRIBUTING.md
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "frontend"
+
+  # 3. Maintain Pip (Backend/Python/Pre-commit)
+  # Based on '.pre-commit-config.yaml' and Python usage
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "backend"
