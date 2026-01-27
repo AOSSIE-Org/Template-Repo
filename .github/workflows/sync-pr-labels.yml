@@ -278,7 +278,7 @@ jobs:
                 });
                 
                 if (['admin', 'maintain'].includes(permissionLevel.data.permission)) {
-                  contributorLabels.push('maintainer');
+                  contributorLabels.push('Org-Member');
                   isMaintainer = true;
                 }
               } catch (error) {
