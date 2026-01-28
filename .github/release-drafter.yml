@@ -54,7 +54,8 @@ categories:
   - title: '👥 Contributors'
     labels:
       - 'first-time-contributor'
-      - 'external-contributor'
+      - 'repeat-contributor'
+      - 'org-Member' 
 
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 change-title-escapes: '\<*_&'

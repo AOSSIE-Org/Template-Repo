@@ -1,8 +1,6 @@
 name: Sync PR Labels
 
 on:
-  pull_request:
-    types: [opened, reopened, synchronize, edited]
   pull_request_target:
     types: [opened, reopened, synchronize, edited]
 
@@ -219,29 +217,40 @@ jobs:
               sizeLabel = 'size/XL';
             }
             
-            console.log(`Applying size label: ${sizeLabel}`);
+            console.log(`Calculated size label: ${sizeLabel}`);
             
-            // Remove any existing size labels first
+            // Get current labels on the PR
             const currentLabels = await github.rest.issues.listLabelsOnIssue({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: prNumber
             });
             
-            const sizeLabelsToRemove = currentLabels.data
+            const existingSizeLabels = currentLabels.data
               .map(label => label.name)
               .filter(name => name.startsWith('size/'));
             
-            for (const label of sizeLabelsToRemove) {
-              await github.rest.issues.removeLabel({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: prNumber,
-                name: label
-              });
+            // Check if the size label needs to be changed
+            if (existingSizeLabels.length === 1 && existingSizeLabels[0] === sizeLabel) {
+              console.log(`Size label ${sizeLabel} is already correct, no changes needed`);
+              return;
+            }
+            
+            // Remove outdated size labels only if they differ
+            if (existingSizeLabels.length > 0) {
+              console.log(`Removing outdated size labels: ${existingSizeLabels.join(', ')}`);
+              for (const label of existingSizeLabels) {
+                await github.rest.issues.removeLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: prNumber,
+                  name: label
+                });
+              }
             }
             
             // Apply the new size label
+            console.log(`Applying new size label: ${sizeLabel}`);
             await github.rest.issues.addLabels({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -249,7 +258,7 @@ jobs:
               labels: [sizeLabel]
             });
 
-      # STEP 4: Contributor-based labels
+      # STEP 4: Contributor-based labels(in this later we can add logic of team p as discussed on discord)
       - name: Apply contributor-based labels
         uses: actions/github-script@v7
         env:
@@ -270,23 +279,8 @@ jobs:
               
               const contributorLabels = [];
               
-              // Check if contributor is a member of the organization
-              try {
-                await github.rest.orgs.checkMembershipForUser({
-                  org: context.repo.owner,
-                  username: prAuthor
-                });
-                contributorLabels.push('member');
-              } catch (error) {
-                // Not a member
-                if (commits.data.length <= 1) {
-                  contributorLabels.push('first-time-contributor');
-                } else {
-                  contributorLabels.push('external-contributor');
-                }
-              }
-              
-              // Check if PR author is a collaborator
+              // First check if maintainer
+              let isMaintainer = false;
               try {
                 const permissionLevel = await github.rest.repos.getCollaboratorPermissionLevel({
                   owner: context.repo.owner,
@@ -294,11 +288,21 @@ jobs:
                   username: prAuthor
                 });
                 
-                if (permissionLevel.data.permission === 'admin' || permissionLevel.data.permission === 'maintain') {
-                  contributorLabels.push('maintainer');
+                if (['admin', 'maintain'].includes(permissionLevel.data.permission)) {
+                  contributorLabels.push('org-Member');
+                  isMaintainer = true;
                 }
               } catch (error) {
                 console.log('Could not check collaborator status');
+              }
+              
+              // If not maintainer, check contributor type
+              if (!isMaintainer) {
+                if (commits.data.length <= 1) {
+                  contributorLabels.push('first-time-contributor');
+                } else {
+                  contributorLabels.push('repeat-contributor');
+                }
               }
               
               if (contributorLabels.length > 0) {
