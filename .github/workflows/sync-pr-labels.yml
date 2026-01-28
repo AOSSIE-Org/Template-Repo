@@ -217,29 +217,40 @@ jobs:
               sizeLabel = 'size/XL';
             }
             
-            console.log(`Applying size label: ${sizeLabel}`);
+            console.log(`Calculated size label: ${sizeLabel}`);
             
-            // Remove any existing size labels first
+            // Get current labels on the PR
             const currentLabels = await github.rest.issues.listLabelsOnIssue({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: prNumber
             });
             
-            const sizeLabelsToRemove = currentLabels.data
+            const existingSizeLabels = currentLabels.data
               .map(label => label.name)
               .filter(name => name.startsWith('size/'));
             
-            for (const label of sizeLabelsToRemove) {
-              await github.rest.issues.removeLabel({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: prNumber,
-                name: label
-              });
+            // Check if the size label needs to be changed
+            if (existingSizeLabels.length === 1 && existingSizeLabels[0] === sizeLabel) {
+              console.log(`Size label ${sizeLabel} is already correct, no changes needed`);
+              return;
+            }
+            
+            // Remove outdated size labels only if they differ
+            if (existingSizeLabels.length > 0) {
+              console.log(`Removing outdated size labels: ${existingSizeLabels.join(', ')}`);
+              for (const label of existingSizeLabels) {
+                await github.rest.issues.removeLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: prNumber,
+                  name: label
+                });
+              }
             }
             
             // Apply the new size label
+            console.log(`Applying new size label: ${sizeLabel}`);
             await github.rest.issues.addLabels({
               owner: context.repo.owner,
               repo: context.repo.repo,
