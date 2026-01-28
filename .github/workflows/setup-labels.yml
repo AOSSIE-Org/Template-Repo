@@ -23,19 +23,19 @@ jobs:
             const requiredLabels = [
               // ==================== CONTRIBUTOR LABELS ====================
               { 
-                name: 'Org-Member', 
+                name: 'org-Member', 
                 color: '0E8A16', 
                 description: 'Member of the organization with admin/maintain permissions' 
               },
               { 
                 name: 'first-time-contributor', 
                 color: '7057FF', 
-                description: 'First contribution to this repository' 
+                description: 'First PR of an external contributor' 
               },
               { 
                 name: 'repeat-contributor', 
                 color: '6F42C1', 
-                description: 'External contributor with multiple contributions' 
+                description: 'PR from an external contributor who already had PRs merged' 
               },
               
               // ==================== ISSUE TRACKING LABELS ====================
