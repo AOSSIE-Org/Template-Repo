@@ -208,6 +208,16 @@ reviews:
         - Use appropriate visibility modifiers
         - flag variables that are defined and used only once
         - Look for gas optimization opportunities
+        - Verify that any modification to contract logic includes corresponding automated test updates.
+        - Ensure revert scenarios and failure cases are explicitly handled and validated.
+        - Check for proper access control enforcement (Ownable, RBAC, etc.).
+        - Validate event emission consistency for all state-changing functions.
+        - Ensure architectural consistency with existing contracts (no breaking storage layout changes unless documented).
+        - Confirm that new features were discussed in an issue before implementation (if major change).
+        - Flag broad refactors that mix multiple concerns in a single PR.
+        - Ensure no security-sensitive logic changes are introduced without tests.
+        - Review for reentrancy risks and improper input validation.
+        - Confirm gas optimization opportunities are considered.
 
     # Javascript/Typescript test files
     - path: "**/*.test.{ts,tsx,js,jsx}"
@@ -225,6 +235,12 @@ reviews:
       instructions: |
         Review test files for:
         - Comprehensive coverage of contract behavior
+        - Ensure unit tests cover success paths, edge cases, and failure/revert scenarios.
+        - Validate access control restrictions in tests.
+        - Ensure event emissions are tested where applicable.
+        - Confirm that state changes are verified after each function call.
+        - Flag insufficient test coverage when contract logic is modified.
+        - Ensure tests are deterministic and do not rely on implicit ordering.
 
     # Asset files (images, fonts, etc.)
     - path: "assets/**/*"
