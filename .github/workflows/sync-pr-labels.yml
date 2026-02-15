@@ -317,6 +317,7 @@ jobs:
 
       # STEP 5: CodeRabbit review status
       - name: Add pending CodeRabbit review label
+        if: github.event.action != 'edited'
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
