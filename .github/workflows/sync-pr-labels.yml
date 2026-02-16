@@ -315,6 +315,24 @@ jobs:
               console.log(`Error applying contributor labels: ${error.message}`);
             }
 
+      # STEP 5: CodeRabbit review status
+      - name: Add pending CodeRabbit review label
+        if: github.event.action != 'edited'
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            
+            console.log('Adding pending-coderabbit-review label');
+            
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              labels: ['pending-coderabbit-review']
+            });
+
       # Summary step
       - name: Label sync summary
         uses: actions/github-script@v7
