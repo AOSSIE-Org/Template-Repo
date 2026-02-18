@@ -21,6 +21,7 @@ issue_enrichment:
         instructions: Feature requests, improvements to existing functionality, performance optimizations, refactoring suggestions, UI/UX enhancements, and any suggestions to make the project better or add new capabilities.
       - label: documentation
         instructions: Documentation updates, additions, corrections, or clarifications needed. This includes missing docs, outdated information, unclear instructions, API documentation, code examples, README improvements, and any requests for better explanations or guides.
+
   planning:
     enabled: true
     auto_planning:
@@ -29,6 +30,11 @@ issue_enrichment:
         - "plan-me" # Auto-plan issues with this label
         - "feature" # Also auto-plan these
         - "!no-plan" # Never auto-plan issues with this label
+
+  duplicate_detection:
+    enabled: true
+    similarity_threshold: 0.8
+    action: comment
 
 reviews:
   profile: assertive # Options: chill (focuses on significant issues, less nitpicky about style), assertive (more thorough, flags style issues and minor improvements too)
@@ -242,7 +248,6 @@ reviews:
             - Integer overflows/underflows (if using unchecked blocks)
             - Front-running risks where applicable
 
-
     # Javascript/Typescript test files
     - path: "**/*.test.{ts,tsx,js,jsx}"
       instructions: |
@@ -266,7 +271,6 @@ reviews:
         - Adequate test updates whenever contract logic is modified.
         - Deterministic behavior (tests should not rely on implicit execution order or shared mutable state).
         - Clear and descriptive test names that reflect the intended behavior being validated.
-
 
     # Asset files (images, fonts, etc.)
     - path: "assets/**/*"
