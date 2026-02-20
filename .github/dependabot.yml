@@ -1,40 +1,53 @@
 # See help here: https://docs.github.com/en/free-pro-team@latest/github/administering-a-repository/enabling-and-disabling-version-updates
+# Dependabot Configuration for Multi-Domain Projects
+# Documentation: https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+# ============================================================================
+# CUSTOMIZATION GUIDE
+# ============================================================================
+# 1. Remove package ecosystems not used in your project (e.g., if no Java, remove maven & gradle)
+# 2. Update "directory" if dependencies are in subdirectories (e.g., "/backend", "/frontend")
+# 3. Adjust "schedule" timing based on your team's workflow
+# 4. Set "open-pull-requests-limit" based on your review capacity (default: 5)
+# 5. Add reviewers/assignees if needed:
+#    reviewers:
+#      - "username"           # Individual GitHub user
+#      - "org/team-name"      # Organization team
+#    assignees:
+#      - "username"
+# 6. Customize labels to match your project's labeling system
+# 7. Use "ignore" to exclude specific dependencies or update types
+# 8. For monorepos, duplicate sections with different "directory" values
+# ============================================================================
 
 version: 2
 updates:
-  # Enable version updates for npm
+  # NPM - JavaScript/Node.js projects
+  # Remove this section if your project doesn't use npm
   - package-ecosystem: "npm"
-    directory: "/"
+    directory: "/"  # Change to "/frontend" or "/backend" for monorepos
     schedule:
-      interval: "weekly"
-      day: "monday"
-      time: "09:00"
-    open-pull-requests-limit: 5
-    reviewers:
-      - "AOSSIE-Org/maintainers"
-    assignees:
-      - "AOSSIE-Org/maintainers"
+      interval: "weekly"  # Options: daily, weekly, monthly
+      day: "monday"       # For weekly: monday-sunday
+      time: "09:00"       # UTC time
+    open-pull-requests-limit: 5  # Max PRs to keep open
     labels:
       - "dependencies"
       - "npm"
     commit-message:
-      prefix: "chore(deps)"
+      prefix: "chore(deps)"  # Follows conventional commits
       include: "scope"
     pull-request-branch-name:
-      separator: "/"
+      separator: "/"  # Creates branches like: dependabot/npm/package-name
 
-  # Enable version updates for GitHub Actions
+  # GitHub Actions - Keep workflows up to date (recommended for all projects)
   - package-ecosystem: "github-actions"
-    directory: "/"
+    directory: "/"  # Scans .github/workflows/
     schedule:
       interval: "weekly"
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
-    reviewers:
-      - "AOSSIE-Org/maintainers"
-    assignees:
-      - "AOSSIE-Org/maintainers"
     labels:
       - "dependencies"
       - "github-actions"
@@ -42,18 +55,15 @@ updates:
       prefix: "chore(deps)"
       include: "scope"
 
-  # Enable version updates for Docker
+  # Docker - Containerized applications
+  # Remove this section if your project doesn't use Docker
   - package-ecosystem: "docker"
-    directory: "/"
+    directory: "/"  # Directory containing Dockerfile
     schedule:
       interval: "weekly"
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
-    reviewers:
-      - "AOSSIE-Org/maintainers"
-    assignees:
-      - "AOSSIE-Org/maintainers"
     labels:
       - "dependencies"
       - "docker"
@@ -61,7 +71,8 @@ updates:
       prefix: "chore(deps)"
       include: "scope"
 
-  # Enable version updates for bundler (Ruby)
+  # Bundler - Ruby projects
+  # Remove this section if your project doesn't use Ruby
   - package-ecosystem: "bundler"
     directory: "/"
     schedule:
@@ -69,17 +80,15 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
-    reviewers:
-      - "AOSSIE-Org/maintainers"
-    assignees:
-      - "AOSSIE-Org/maintainers"
     labels:
       - "dependencies"
+      - "ruby"
     commit-message:
       prefix: "chore(deps)"
       include: "scope"
 
-  # Enable version updates for Cargo (Rust)
+  # Cargo - Rust projects
+  # Remove this section if your project doesn't use Rust
   - package-ecosystem: "cargo"
     directory: "/"
     schedule:
@@ -87,17 +96,15 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
-    reviewers:
-      - "AOSSIE-Org/maintainers"
-    assignees:
-      - "AOSSIE-Org/maintainers"
     labels:
       - "dependencies"
+      - "rust"
     commit-message:
       prefix: "chore(deps)"
       include: "scope"
 
-  # Enable version updates for Maven (Java)
+  # Maven - Java projects
+  # Remove this section if your project uses Gradle instead or doesn't use Java
   - package-ecosystem: "maven"
     directory: "/"
     schedule:
@@ -105,17 +112,15 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
-    reviewers:
-      - "AOSSIE-Org/maintainers"
-    assignees:
-      - "AOSSIE-Org/maintainers"
     labels:
       - "dependencies"
+      - "java"
     commit-message:
       prefix: "chore(deps)"
       include: "scope"
 
-  # Enable version updates for Gradle (Java)
+  # Gradle - Java/Kotlin/Android projects
+  # Remove this section if your project uses Maven instead or doesn't use Java/Kotlin
   - package-ecosystem: "gradle"
     directory: "/"
     schedule:
@@ -123,17 +128,15 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
-    reviewers:
-      - "AOSSIE-Org/maintainers"
-    assignees:
-      - "AOSSIE-Org/maintainers"
     labels:
       - "dependencies"
+      - "java"
     commit-message:
       prefix: "chore(deps)"
       include: "scope"
 
-  # Enable version updates for Composer (PHP)
+  # Composer - PHP projects
+  # Remove this section if your project doesn't use PHP
   - package-ecosystem: "composer"
     directory: "/"
     schedule:
@@ -141,17 +144,15 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
-    reviewers:
-      - "AOSSIE-Org/maintainers"
-    assignees:
-      - "AOSSIE-Org/maintainers"
     labels:
       - "dependencies"
+      - "php"
     commit-message:
       prefix: "chore(deps)"
       include: "scope"
 
-  # Enable version updates for Go modules
+  # Go Modules - Go projects
+  # Remove this section if your project doesn't use Go
   - package-ecosystem: "gomod"
     directory: "/"
     schedule:
@@ -159,56 +160,46 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
-    reviewers:
-      - "AOSSIE-Org/maintainers"
-    assignees:
-      - "AOSSIE-Org/maintainers"
     labels:
       - "dependencies"
+      - "go"
     commit-message:
       prefix: "chore(deps)"
       include: "scope"
 
-  # Enable version updates for Poetry (Python AI/ML projects)
+  # Pip - Python projects (supports pip, pipenv, poetry)
+  # Remove this section if your project doesn't use Python
   - package-ecosystem: "pip"
-    directory: "/"
+    directory: "/"  # Directory containing requirements.txt, Pipfile, or pyproject.toml
     schedule:
       interval: "weekly"
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
-    reviewers:
-      - "AOSSIE-Org/maintainers"
-    assignees:
-      - "AOSSIE-Org/maintainers"
     labels:
       - "dependencies"
       - "python"
-      - "ai-ml"
     commit-message:
       prefix: "chore(deps)"
       include: "scope"
-    ignore:
-      # Ignore major version updates for ML frameworks to prevent breaking changes
-      - dependency-name: "tensorflow"
-        update-types: ["version-update:semver-major"]
-      - dependency-name: "torch"
-        update-types: ["version-update:semver-major"]
-      - dependency-name: "scikit-learn"
-        update-types: ["version-update:semver-major"]
+    # Uncomment and customize for AI/ML projects to prevent breaking changes:
+    # ignore:
+    #   - dependency-name: "tensorflow"
+    #     update-types: ["version-update:semver-major"]
+    #   - dependency-name: "torch"
+    #     update-types: ["version-update:semver-major"]
+    #   - dependency-name: "scikit-learn"
+    #     update-types: ["version-update:semver-major"]
 
-  # Enable version updates for Terraform (Infrastructure)
+  # Terraform - Infrastructure as Code
+  # Remove this section if your project doesn't use Terraform
   - package-ecosystem: "terraform"
-    directory: "/"
+    directory: "/"  # Directory containing .tf files
     schedule:
       interval: "weekly"
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
-    reviewers:
-      - "AOSSIE-Org/maintainers"
-    assignees:
-      - "AOSSIE-Org/maintainers"
     labels:
       - "dependencies"
       - "infrastructure"
@@ -216,7 +207,8 @@ updates:
       prefix: "chore(deps)"
       include: "scope"
 
-  # Enable version updates for Pub (Dart/Flutter - Blockchain DApps)
+  # Pub - Dart/Flutter projects
+  # Remove this section if your project doesn't use Dart/Flutter
   - package-ecosystem: "pub"
     directory: "/"
     schedule:
@@ -224,18 +216,16 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
-    reviewers:
-      - "AOSSIE-Org/maintainers"
-    assignees:
-      - "AOSSIE-Org/maintainers"
     labels:
       - "dependencies"
       - "flutter"
+      - "dart"
     commit-message:
       prefix: "chore(deps)"
       include: "scope"
 
-  # Enable version updates for NuGet (.NET - Blockchain projects)
+  # NuGet - .NET projects (C#, F#, VB.NET)
+  # Remove this section if your project doesn't use .NET
   - package-ecosystem: "nuget"
     directory: "/"
     schedule:
@@ -243,10 +233,6 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
-    reviewers:
-      - "AOSSIE-Org/maintainers"
-    assignees:
-      - "AOSSIE-Org/maintainers"
     labels:
       - "dependencies"
       - "dotnet"
