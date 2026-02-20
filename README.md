@@ -126,7 +126,7 @@ TODO: Update with your repository structure
 
 ---
 
-## �️ Architecture Diagram
+## 🏗️ Architecture Diagram
 
 TODO: Add your system architecture diagram here
 
