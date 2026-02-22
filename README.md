@@ -42,8 +42,7 @@
 &nbsp;&nbsp;
 <!-- Youtube -->
 <a href="https://www.youtube.com/@AOSSIE-Org">
-  <img src="https://img.shields.io/youtube/channel/subscribers/UCKVVLbawY7Gej_3o2WKsoiA?style=flat&logo=youtube&logoColor=white%20&logoSize=auto&labelColor=FF0000&color=FF0000
-  " alt="Youtube Badge"></a>
+  <img src="https://img.shields.io/youtube/channel/subscribers/UCKVVLbawY7Gej_3o2WKsoiA?style=flat&logo=youtube&logoColor=white%20&logoSize=auto&labelColor=FF0000&color=FF0000" alt="Youtube Badge"></a>
 </p>
 
 ---
