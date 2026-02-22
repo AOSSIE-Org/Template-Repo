@@ -27,11 +27,9 @@ indent_size = 2
 indent_size = 2
 
 # Makefiles (must use tabs)
-[Makefile]
+[{Makefile,*.mk}]
 indent_style = tab
-
-[*.mk]
-indent_style = tab
+tab_width = 4
 
 
 
