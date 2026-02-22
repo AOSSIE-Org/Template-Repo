@@ -4,7 +4,7 @@
 <!-- Organization Logo -->
 <div align="center" style="display: flex; align-items: center; justify-content: center; gap: 16px;">
   <img alt="AOSSIE" src="public/aossie-logo.svg" width="175">
-  <img src="public/todo-project-logo.svg" width="175" />
+  <!-- <img src="public/todo-project-logo.svg" width="175" /> -->
 </div>
 
 &nbsp;
@@ -42,8 +42,8 @@
 &nbsp;&nbsp;
 <!-- Youtube -->
 <a href="https://www.youtube.com/@AOSSIE-Org">
-  <img src="https://img.shields.io/youtube/channel/subscribers/UCKVVLbawY7Gej_3o2WKsoiA?style=flat&logo=youtube&logoColor=white%20&logoSize=auto&labelColor=FF0000&color=FF0000
-  " alt="Youtube Badge"></a>
+  <img src="https://img.shields.io/badge/subscribers-73-FF0000?style=flat&logo=youtube&logoColor=white&labelColor=FF0000" alt="YouTube Badge">
+</a>
 </p>
 
 ---
