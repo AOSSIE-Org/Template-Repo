@@ -534,6 +534,7 @@ If you encounter issues not covered here:
 - Issues will be reassigned if inactive for extended periods
 -->
 - If there are no active PRs for an issue for 2+ days, mention your intent under the issue and begin
+- Avoid working on issues which are assigned to someone, even if they are inactive
 - Check for existing PRs before starting to avoid duplication, as there might PRs that didn't mention the related issue
 
 
