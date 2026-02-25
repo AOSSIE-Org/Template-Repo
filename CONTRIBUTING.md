@@ -172,6 +172,7 @@ git push origin feature/your-feature-name
 - [ ] You've updated relevant documentation
 - [ ] Your commits are clean and well-organized
 - [ ] You've rebased with the latest upstream changes
+- [ ] You've thought from the reviewer's perspective and made your PR easy to review
 
 ### Submitting a Pull Request
 
@@ -213,6 +214,12 @@ Steps to test the changes
 - Respond to review comments promptly
 - Make requested changes in new commits
 - Be patient - maintainers will review when available
+- Use `[WIP]` in your PR title for incomplete PRs. Don't use this as a way to gatekeep; focus on one change until it gets merged.
+
+### Reviewing PRs
+
+- Instead of opening duplicate PRs, help review and improve existing ones.
+- When reviewing, assess whether the change is actually necessary before diving into implementation details and functionality testing.
 
 ## 📝 Code Style Guidelines
 
@@ -225,6 +232,7 @@ TODO: Add project-specific code style guidelines
 - Add comments for complex logic
 - Remove console.logs before committing
 - Avoid code duplication
+- Avoid unnecessary complexity and minor over-optimization
 
 ### JavaScript/TypeScript
 - Use ES6+ syntax
@@ -521,9 +529,13 @@ If you encounter issues not covered here:
 ## 🎯 Issue Assignment
 
 - One contributor per issue (unless specified otherwise)
+<!--
 - Wait for assignment before starting work
 - Issues will be reassigned if inactive for extended periods
-- Check for existing PRs before starting to avoid duplication
+-->
+- If there are no active PRs for an issue for 2+ days, mention your intent under the issue and begin
+- Avoid working on issues which are assigned to someone, even if they are inactive
+- Check for existing PRs before starting to avoid duplication, as there might PRs that didn't mention the related issue
 
 
 Thank you for contributing to TODO! Your efforts help make this project better for everyone. 🚀
