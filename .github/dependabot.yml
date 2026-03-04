@@ -1,0 +1,20 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: weekly
+    multi-ecosystem-groups:
+      "all-deps":
+        patterns:
+          - "*"
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: monthly
+
+groups:
+  "frontend-backend":
+    patterns:
+      - "@myorg/frontend*"
+      - "@myorg/backend*"
