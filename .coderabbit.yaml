@@ -19,7 +19,7 @@ early_access: true
 # knowledge_base:
 #   linked_repositories:
 #     - repository: "AOSSIE-Org/backend-api"
-#        instructions: "Contains REST API endpoints and database models"
+#       instructions: "Contains REST API endpoints and database models"
 
 chat:
   # CodeRabbit will automatically respond to @coderabbitai mentions in PR comments
