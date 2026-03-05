@@ -127,6 +127,23 @@ jobs:
                 name: 'size/XL', 
                 color: 'FF0000', 
                 description: 'Extra large PR (>500 lines changed)' 
+              },
+
+              // ==================== AUTOMATION LABELS ====================
+              { 
+                name: 'pending-coderabbit-review', 
+                color: 'FBCA04', 
+                description: 'Waiting for CodeRabbit automated review' 
+              },
+              { 
+                name: 'template_sync', 
+                color: 'BFDADC', 
+                description: 'PR created by template sync workflow' 
+              },
+              { 
+                name: 'auto_pr', 
+                color: '0E8A16', 
+                description: 'Automatically generated pull request' 
               }
             ];
             
@@ -135,7 +152,6 @@ jobs:
             console.log('='.repeat(60));
             console.log(`Total labels to create: ${requiredLabels.length}\n`);
             
-            // Get existing labels with pagination
             const existingLabels = await github.paginate(
               github.rest.issues.listLabelsForRepo,
               {
@@ -152,11 +168,9 @@ jobs:
             let skipped = 0;
             let failed = 0;
             
-            // Process each label
             for (const label of requiredLabels) {
               try {
                 if (!existingLabelNames.includes(label.name)) {
-                  // Create new label
                   await github.rest.issues.createLabel({
                     owner: context.repo.owner,
                     repo: context.repo.repo,
@@ -167,7 +181,6 @@ jobs:
                   console.log(`✅ Created: ${label.name} (#${label.color})`);
                   created++;
                 } else {
-                  // Update existing label (in case color/description changed)
                   const existingLabel = existingLabels.find(l => l.name === label.name);
                   if (existingLabel.color !== label.color || existingLabel.description !== label.description) {
                     await github.rest.issues.updateLabel({
@@ -190,7 +203,6 @@ jobs:
               }
             }
             
-            // Summary
             console.log('\n' + '='.repeat(60));
             console.log('📊 SUMMARY');
             console.log('='.repeat(60));
@@ -200,7 +212,6 @@ jobs:
             console.log(`❌ Failed:   ${failed}`);
             console.log('='.repeat(60));
             
-            // Fail the step if any labels failed to create/update
             if (failed > 0) {
               core.setFailed(`Label setup failed! ${failed} label(s) could not be created or updated.`);
             } else if (created > 0 || updated > 0) {
