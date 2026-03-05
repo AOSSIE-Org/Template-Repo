@@ -7,6 +7,20 @@ language: en
 # Enable experimental features (currently not using any specific early_access features)
 early_access: true
 
+# Multi-repo analysis: lets CodeRabbit use other repositories as context when reviewing PRs.
+# Most useful when linking tightly coupled repos, e.g.:
+#   - Frontend ↔ backend (API contract changes)
+#   - Service ↔ shared library (ripple-effect on consumers)
+#   - Microservices sharing a database schema
+# Avoid configuring this at org level — link only the repos relevant to this project.
+# See: https://docs.coderabbit.ai/knowledge-base/multi-repo-analysis
+#
+# To enable, uncomment the block below and replace the example values with your repos.
+# knowledge_base:
+#   linked_repositories:
+#     - repository: "AOSSIE-Org/backend-api"
+#        instructions: "Contains REST API endpoints and database models"
+
 chat:
   # CodeRabbit will automatically respond to @coderabbitai mentions in PR comments
   auto_reply: true
