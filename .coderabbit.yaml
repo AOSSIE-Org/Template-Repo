@@ -281,7 +281,7 @@ reviews:
 
     # Dependency manifest and lock files (e.g. updated by Dependabot, Renovate)
     - path: >-
-        **/{package.json,package-lock.json,yarn.lock,requirements.txt,Pipfile,Pipfile.lock,pyproject.toml,poetry.lock,go.mod,go.sum,Cargo.toml,Cargo.lock,pom.xml,build.gradle,*.gemspec,Gemfile,Gemfile.lock}
+        **/{package.json,package-lock.json,yarn.lock,pnpm-lock.yaml,npm-shrinkwrap.json,requirements.txt,Pipfile,Pipfile.lock,pyproject.toml,poetry.lock,go.mod,go.sum,Cargo.toml,Cargo.lock,pom.xml,build.gradle,build.gradle.kts,gradle.lockfile,*.gemspec,Gemfile,Gemfile.lock}
       instructions: |
         This file may be modified by a dependency bot (e.g., Dependabot, Renovate).
         Perform a structured dependency upgrade analysis:
