@@ -60,7 +60,21 @@ jobs:
             for (const cache of all) {
               const stale    = new Date(cache.last_accessed_at) < cutoff;
               const zeroByte = (cache.size_in_bytes || 0) === 0;
-              const closedPR = cache.ref?.match(/refs\/pull\/\d+\/merge/);
+              let closedPR = false;
+              const prMatch = cache.ref?.match(/refs\/pull\/(\d+)\/merge/);
+              if (prMatch) {
+                try {
+                  const { data: pr } = await github.rest.pulls.get({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    pull_number: parseInt(prMatch[1]),
+                  });
+                  closedPR = pr.state === 'closed';
+                } catch (err) {
+                  // PR may have been deleted; treat as closed
+                  closedPR = true;
+                }
+              }
 
               if (!stale && !zeroByte && !closedPR) continue;
 
