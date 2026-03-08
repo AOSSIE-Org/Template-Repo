@@ -100,8 +100,6 @@ jobs:
           distribution: temurin
           java-version: '21'   # ⚠️ MANUAL change if project uses 11 or 17
 
-
-
 # --------------------------------------------------
 # Initialize CodeQL
 # IMPORTANT: must run BEFORE build
@@ -116,8 +114,6 @@ jobs:
           # ⚠️ OPTIONAL
           # Uncomment for deeper scans
           # queries: security-extended
-
-
 
 # --------------------------------------------------
 # MANUAL BUILD (only for compiled languages)
@@ -134,8 +130,6 @@ jobs:
       - name: Build Java (Maven)
         if: matrix.language == 'java-kotlin' && matrix.build-mode == 'manual' && hashFiles('pom.xml') != ''
         run: mvn -B package --file pom.xml
-
-
 
 # --------------------------------------------------
 # Run CodeQL scan
