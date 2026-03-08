@@ -36,10 +36,16 @@ jobs:
             // Paginate all caches
             let page = 1, all = [];
             while (true) {
-              const { data } = await github.rest.actions.getActionsCacheList({
-                owner: context.repo.owner, repo: context.repo.repo,
-                per_page: 100, page,
-              });
+              let data;
+              try {
+                ({ data } = await github.rest.actions.getActionsCacheList({
+                  owner: context.repo.owner, repo: context.repo.repo,
+                  per_page: 100, page,
+                }));
+              } catch (err) {
+                core.setFailed(`Failed to list caches (page ${page}): ${err.message}`);
+                return;
+              }
               if (!data.actions_caches.length) break;
               all = all.concat(data.actions_caches);
               if (data.actions_caches.length < 100) break;
