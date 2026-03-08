@@ -28,7 +28,11 @@ jobs:
         with:
           script: |
             const DRY_RUN    = '${{ github.event.inputs.dry_run }}' === 'true';
-            const STALE_DAYS = parseInt('${{ github.event.inputs.stale_days }}' || '7');
+            const staleDaysRaw = '${{ github.event.inputs.stale_days }}' || '7';
+            const STALE_DAYS = Number(staleDaysRaw);
+            if (!Number.isInteger(STALE_DAYS) || STALE_DAYS < 1) {
+              throw new Error(`stale_days must be a positive integer, got "${staleDaysRaw}"`);
+            }
             const cutoff = new Date();
             cutoff.setDate(cutoff.getDate() - STALE_DAYS);
 
