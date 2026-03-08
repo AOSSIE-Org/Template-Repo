@@ -64,12 +64,16 @@ jobs:
               console.log(`${DRY_RUN ? '[DRY]' : '🗑️'} ${reason} → ${cache.key}`);
 
               if (!DRY_RUN) {
-                await github.rest.actions.deleteActionsCacheById({
-                  owner: context.repo.owner, repo: context.repo.repo,
-                  cache_id: cache.id,
-                });
-                deleted++;
-                freed += cache.size_in_bytes || 0;
+                try {
+                  await github.rest.actions.deleteActionsCacheById({
+                    owner: context.repo.owner, repo: context.repo.repo,
+                    cache_id: cache.id,
+                  });
+                  deleted++;
+                  freed += cache.size_in_bytes || 0;
+                } catch (err) {
+                  console.log(`⚠️ Failed to delete ${cache.key}: ${err.message}`);
+                }
               }
             }
 
