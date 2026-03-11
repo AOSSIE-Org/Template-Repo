@@ -3,8 +3,8 @@ name: Mark stale issues and pull requests
 on:
   schedule:
     # Runs every hour at minute 35.
-    # @maintainer: For most repos a daily schedule is sufficient, e.g. '0 1 * * *'
-    - cron: "35 * * * *"
+    # `@maintainer`: For most repos a daily schedule is sufficient, e.g. '0 1 * * *'
+    - cron: "0 1 * * *"
 
 permissions:
   contents: read
