@@ -64,8 +64,8 @@ jobs:
           # severity level or above. Options: low | moderate | high | critical
           fail-on-severity: moderate
 
-          # Also fail if CVEs exist but no fix is yet available
-          # Useful for blocking known-bad packages even if unpatched
+          # Which dependency scopes to check for vulnerabilities
+          # Options: runtime | development | unknown (comma-separated)
           fail-on-scopes: runtime
 
           # ── LICENSE ENFORCEMENT ─────────────────────────────
