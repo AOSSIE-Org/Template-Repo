@@ -94,9 +94,13 @@ jobs:
           # even if they match a denied license pattern.
           # Format: "pkg:npm/name, pkg:pypi/name, pkg:githubactions/owner/repo@version"
           # ── Edit this list when adding approved exceptions ──
-          allow-dependencies-licenses: >-
-            pkg:npm/@aossie/core,
-            pkg:npm/@myorg/mypackage
+          # ALLOW EXCEPTIONS: Packages that are explicitly approved
+          # even if they match a denied license pattern.
+          # Format: "pkg:npm/name, pkg:pypi/name, pkg:githubactions/owner/repo@version"
+          # ── Edit this list when adding approved exceptions ──
+          # allow-dependencies-licenses: >-
+          #   pkg:npm/example-package,
+          #   pkg:pypi/example-package
 
           # ── SCOPE FILTERING ─────────────────────────────────
           # Skip dev-only dependencies (test frameworks, linters, etc.)
