@@ -124,8 +124,8 @@ jobs:
           # Post a detailed summary comment directly on the PR
           # comment-summary-in-pr: always
 
-          # Warn (don't fail) for packages with no license info.
-          # Change to "true" to block unlicensed packages.
+          # Fail (don't just warn) on license violations.
+          # Change to "true" to only warn without failing.
           warn-only: false
 
           # ── VULNERABILITY DATABASE ───────────────────────────
