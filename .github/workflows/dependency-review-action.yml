@@ -15,32 +15,32 @@ on:
     # Only re-run when dependency manifests actually change
     paths:
       # JavaScript / TypeScript / Node
-      - "package.json"
-      - "package-lock.json"
-      - "yarn.lock"
-      - "pnpm-lock.yaml"
+      - "**/package.json"
+      - "**/package-lock.json"
+      - "**/yarn.lock"
+      - "**/pnpm-lock.yaml"
       # Python
-      - "requirements*.txt"
-      - "Pipfile.lock"
-      - "pyproject.toml"
-      - "poetry.lock"
+      - "**/requirements*.txt"
+      - "**/Pipfile.lock"
+      - "**/pyproject.toml"
+      - "**/poetry.lock"
       # Rust
-      - "Cargo.toml"
-      - "Cargo.lock"
+      - "**/Cargo.toml"
+      - "**/Cargo.lock"
       # Go
-      - "go.mod"
-      - "go.sum"
+      - "**/go.mod"
+      - "**/go.sum"
       # Java / Kotlin / Android
-      - "pom.xml"
-      - "build.gradle"
-      - "build.gradle.kts"
-      - "*.gradle"
+      - "**/pom.xml"
+      - "**/build.gradle"
+      - "**/build.gradle.kts"
+      - "**/*.gradle"
       # Ruby
-      - "Gemfile.lock"
+      - "**/Gemfile.lock"
       # Docker / Infrastructure
-      - "Dockerfile"
-      - "docker-compose*.yml"
-      - "docker-compose*.yaml"
+      - "**/Dockerfile"
+      - "**/docker-compose*.yml"
+      - "**/docker-compose*.yaml"
       # GitHub Actions themselves
       - ".github/workflows/*.yml"
       - ".github/workflows/*.yaml"
@@ -144,7 +144,7 @@ jobs:
   #           echo "❌ Dependency review failed — check the PR comment for details."
   #           echo ""
   #           echo "Common fixes:"
-  #           echo "  • Replace GPL-licensed packages with MIT/Apache-2.0 equivalents"
+  #           echo "  • Replace dependencies using licenses not in allow-licenses"
   #           echo "  • Upgrade vulnerable packages to patched versions"
   #           echo "  • Add an explicit exception to allow-dependencies-licenses if intentional"
   #         fi
