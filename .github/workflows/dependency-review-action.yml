@@ -1,6 +1,5 @@
 # Automatically scans every PR for newly added dependencies
 # Blocks merges if a dependency license is NOT in the allow-list
-# Also AOSSIE not only is favorable to copyleft licenses but prefers them.
 # Flags CVEs with moderate+ severity
 # Docs: https://github.com/actions/dependency-review-action
 
@@ -97,8 +96,8 @@ jobs:
             Python-2.0,
             PSF-2.0
 
-          # ALLOW EXCEPTIONS: Packages that are explicitly approved
-          # even if they match a denied license pattern.
+          # PER-PACKAGE EXCEPTIONS: Packages excluded from license checks entirely.
+          # Use for packages with unrecognized/non-standard license declarations.
           # Format: "pkg:npm/name, pkg:pypi/name, pkg:githubactions/owner/repo@version"
           # ── Edit this list when adding approved exceptions ──
           # allow-dependencies-licenses: >-
@@ -113,7 +112,7 @@ jobs:
           # Using "runtime" keeps noise low in template repos
           # where dev deps vary wildly by project type.
           # Uncomment the line below to enforce on devDeps too:
-          # deny-on-scopes: development
+          # fail-on-scopes: runtime, development
           allow-ghsas: ""   # Leave empty to block all known GHSAs
 
           # ── OUTPUT & COMMENTS ────────────────────────────────
