@@ -1,5 +1,6 @@
 # Automatically scans every PR for newly added dependencies
-# Blocks merges on license violations (GPL/LGPL/restrictive)
+# Blocks merges if a dependency license is NOT in the allow-list
+# Also AOSSIE not only is favorable to copyleft licenses but prefers them.
 # Flags CVEs with moderate+ severity
 # Docs: https://github.com/actions/dependency-review-action
 
@@ -40,8 +41,10 @@ on:
       # Docker / Infrastructure
       - "Dockerfile"
       - "docker-compose*.yml"
+      - "docker-compose*.yaml"
       # GitHub Actions themselves
       - ".github/workflows/*.yml"
+      - ".github/workflows/*.yaml"
 
 permissions:
   contents: read          # Required to read the repo content
@@ -53,9 +56,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
       - name: Run Dependency Review
         uses: actions/dependency-review-action@v4
         with:
@@ -69,8 +69,8 @@ jobs:
           fail-on-scopes: runtime
 
           # ── LICENSE ENFORCEMENT ─────────────────────────────
-          # DENY: Copyleft & restrictive licenses that conflict with
-          # open-source permissive projects at AOSSIE.
+          # ALLOW: Only these licenses are permitted in new dependencies.
+          # PRs introducing any other license will fail automatically.
           # Full SPDX list: https://spdx.org/licenses/
           allow-licenses: >-
             MIT,
@@ -97,10 +97,6 @@ jobs:
             Python-2.0,
             PSF-2.0
 
-          # ALLOW EXCEPTIONS: Packages that are explicitly approved
-          # even if they match a denied license pattern.
-          # Format: "pkg:npm/name, pkg:pypi/name, pkg:githubactions/owner/repo@version"
-          # ── Edit this list when adding approved exceptions ──
           # ALLOW EXCEPTIONS: Packages that are explicitly approved
           # even if they match a denied license pattern.
           # Format: "pkg:npm/name, pkg:pypi/name, pkg:githubactions/owner/repo@version"
