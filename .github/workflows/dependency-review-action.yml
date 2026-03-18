@@ -127,6 +127,9 @@ jobs:
           # Use the GitHub Advisory Database (GHSA) as the source.
           # This is the default; listed explicitly for clarity.
           # vulnerability-check: true   # default
+          # Add explicitly so teams know it's active
+          show-openssf-scorecard: true
+          warn-on-openssf-scorecard-level: 3
 
   #  Post a status summary badge to PR 
   # summarize:
