@@ -116,6 +116,23 @@ TODO: Complete applicable items based on your project type
 
 ---
 
+## 🧰 Automation & CI
+
+This repository includes a helper script to validate the
+[Dependabot](https://docs.github.com/en/code-security/supply-chain-security/keeping-your-dependencies-updated-automatically) configuration
+and ensure **groups or multi-ecosystem groups** are defined per issue
+[#73](https://github.com/AOSSIE-Org/Template-Repo/issues/73).
+
+Run the validator with Node:
+
+```bash
+node scripts/validate-dependabot.js
+```
+
+Tests for the validator are located under `tests/dependabot.test.js`
+and executed via `npm test` (sample configuration is in
+`.github/dependabot.yml`).
+
 ## 🔗 Repository Links
 
 TODO: Update with your repository structure
