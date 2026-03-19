@@ -73,6 +73,15 @@
         "automation"
       ]
     },
+    {
+      "title": "Code Quality: Configure CodeRabbit Multi-Repo Analysis (if applicable)",
+      "body": "## Description\nCodeRabbit supports multi-repo analysis, which lets it use other repositories as context when reviewing PRs. The `.coderabbit.yaml` in this repository already contains a commented-out `knowledge_base` section ready to be filled in.\n\n## When is this useful?\n- **Microservices** — a change to one service's API may break consumers in other repos\n- **Shared libraries** — modifications to a shared utility can have ripple effects across multiple repos\n- **API contracts** — when a backend API changes, frontend/mobile repos may need coordinated updates\n- **Database schemas** — schema changes can affect all services querying the same data model\n- **Frontend ↔ backend** — link tightly coupled client/server repos for cross-repo awareness\n\n> **Note:** Do not configure this at the org level — link only the repos directly relevant to this project.\n\n## Tasks\n- [ ] Identify related repositories that would provide useful context for PR reviews\n- [ ] Open `.coderabbit.yaml` and locate the commented-out `knowledge_base` block\n- [ ] Uncomment the block and replace the placeholder values with the actual org and repo names\n- [ ] Open a PR with the change and verify CodeRabbit uses the linked repos as context\n\n## Example\n```yaml\nknowledge_base:\n  linked_repositories:\n    - repository: \"your-org/related-repo\"\n      instructions: \"Brief description of what this repo contains and why it's relevant\"\n```\n\n## Resources\n- [CodeRabbit Multi-Repo Analysis Docs](https://docs.coderabbit.ai/knowledge-base/multi-repo-analysis)\n\n**Note**: If this project has no meaningfully related repositories, you can close this issue.\n",
+      "labels": [
+        "code-quality",
+        "setup",
+        "good-first-issue"
+      ]
+    },
 
     {
       "title": "Frontend: Add Required Footer Elements(if applicable)",
