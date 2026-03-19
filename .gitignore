@@ -198,6 +198,10 @@ _minted*
 # nomencl
 *.nlg
 *.nlo
+
+# Node dependencies
+/node_modules
+
 *.nls
 
 # pax

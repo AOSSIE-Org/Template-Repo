@@ -1,0 +1,14 @@
+{
+  "name": "template-repo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "echo \"No checks configured yet\""
+  },
+  "devDependencies": {
+    "vitest": "^1.0.0",
+    "js-yaml": "^4.1.0"
+  }
+}
