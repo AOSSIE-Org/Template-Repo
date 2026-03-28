@@ -14,7 +14,7 @@ on:
 
   push:
     # Branch-Protection check ONLY works on the default branch(Must match your actual default branch).
-    branches: [ "dev" ]
+    branches: ["dev"]
 
   workflow_dispatch:
 
