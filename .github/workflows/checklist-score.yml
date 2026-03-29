@@ -59,7 +59,7 @@ jobs:
                       current_cat = cat
                       break
               # [x] = Met, [~] = N/A (counts as met)
-              if current_cat and re.match(r'- \[[x~]\]', stripped):
+              if current_cat and re.match(r'- \[[xX~]\]', stripped):
                   counts[current_cat] += 1
 
           total_met = sum(counts.values())
