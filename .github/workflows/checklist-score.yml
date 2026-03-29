@@ -158,7 +158,10 @@ jobs:
             -o upstream_criteria.md || \
           curl -sf \
             "https://raw.githubusercontent.com/coreinfrastructure/best-practices-badge/main/docs/criteria.md" \
-            -o upstream_criteria.md
+            -o upstream_criteria.md || {
+              echo "::error::Failed to fetch upstream OpenSSF criteria from both URLs"
+              exit 1
+            }
 
       - name: Diff upstream vs checklist and open PR if changed
         run: |
