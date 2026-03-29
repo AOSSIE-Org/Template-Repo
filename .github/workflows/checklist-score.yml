@@ -142,7 +142,10 @@ jobs:
           if ! git diff --staged --quiet; then
            git commit -m "chore: update best practices score [skip ci]"
            git fetch origin ${{ github.ref_name }}
-           git rebase origin/${{ github.ref_name }} || git rebase --abort
+           if ! git rebase origin/${{ github.ref_name }}; then
+             git rebase --abort
+             exit 1
+           fi
            git push
           fi
 
