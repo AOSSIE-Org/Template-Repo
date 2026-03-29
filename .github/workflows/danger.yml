@@ -27,6 +27,6 @@ jobs:
           node-version: "20"
 
       - name: Run Danger JS
-        run: npx --yes danger ci
+        run: npx --yes danger@13.0.7 ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
