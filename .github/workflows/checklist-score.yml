@@ -123,12 +123,19 @@ jobs:
           with open("BestPracticesChecklist.md") as f:
               content = f.read()
 
+          marker = "<!-- Auto-updated by checklist-score.yml workflow — do not edit manually -->"
+          if marker not in content:
+              print("⚠️ Warning: Auto-update marker not found in BestPracticesChecklist.md")
+
           new_content = re.sub(
               r'(?<=<!-- Auto-updated by checklist-score\.yml workflow — do not edit manually -->\n).*?(?=\n---)',
               table.strip(),
               content,
               flags=re.DOTALL
           )
+
+          if new_content == content:
+              print("⚠️ Warning: Table was not updated - check marker format")
 
           with open("BestPracticesChecklist.md", "w") as f:
               f.write(new_content)
@@ -226,6 +233,15 @@ jobs:
           subprocess.run(["git", "add", ".github/openssf_criteria_diff.md"], check=True)
           subprocess.run(["git", "commit", "-m", f"chore: OpenSSF criteria diff {date.today()}"], check=True)
           subprocess.run(["git", "push", "origin", branch], check=True)
+
+          # Check if PR already exists for this branch
+          result = subprocess.run(
+              ["gh", "pr", "list", "--head", branch, "--json", "number"],
+              capture_output=True, text=True
+          )
+          if result.returncode == 0 and result.stdout.strip() != "[]":
+              print(f"PR already exists for branch {branch}, skipping creation")
+              sys.exit(0)
 
           subprocess.run([
               "gh", "pr", "create",
