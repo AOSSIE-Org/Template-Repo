@@ -59,7 +59,7 @@ jobs:
                       current_cat = cat
                       break
               # [x] = Met, [~] = N/A (counts as met)
-              if current_cat and re.match(r'- \[[x~]\]', stripped):
+              if current_cat and re.match(r'- \[[xX~]\]', stripped):
                   counts[current_cat] += 1
 
           total_met = sum(counts.values())
@@ -165,7 +165,10 @@ jobs:
             -o upstream_criteria.md || \
           curl -sf \
             "https://raw.githubusercontent.com/coreinfrastructure/best-practices-badge/main/docs/criteria.md" \
-            -o upstream_criteria.md
+            -o upstream_criteria.md || {
+              echo "::error::Failed to fetch upstream OpenSSF criteria from both URLs"
+              exit 1
+            }
 
       - name: Ensure maintenance label exists
         run: gh label create maintenance --description "Maintenance tasks" --color "FBCA04" || true

@@ -28,11 +28,10 @@
 | Basics             | 0   | 8     | 🔴     |
 | Change Control     | 0   | 6     | 🔴     |
 | Reporting          | 0   | 8     | 🔴     |
-| Quality            | 0   | 10    | 🔴     |
+| Quality            | 0   | 10     | 🔴     |
 | Security           | 0   | 9     | 🔴     |
 | Analysis           | 0   | 7     | 🔴     |
 | **Total**          | **0** | **48** | **0%** |
-
 ---
 
 ## 🏗️ Basics
