@@ -40,7 +40,7 @@ jobs:
               "basics": 8,
               "change_control": 6,
               "reporting": 8,
-              "quality": 10,
+              "quality": 11,
               "security": 9,
               "analysis": 7,
           }
