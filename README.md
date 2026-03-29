@@ -44,7 +44,7 @@
 <a href="https://www.youtube.com/@AOSSIE-Org">
   <img src="https://img.shields.io/youtube/channel/subscribers/UCKVVLbawY7Gej_3o2WKsoiA?style=flat&logo=youtube&logoColor=white%20&logoSize=auto&labelColor=FF0000&color=FF0000" alt="Youtube Badge"></a>
 
-[![Best Practices](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FAOSSIE-Org%2FTemplate-Repo%2Fmain%2Fchecklist-status.json&query=%24.percent&label=Best%20Practices&suffix=%25&color=green&logo=openssf)](./BestPracticesChecklist.md)
+[![Best Practices](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FAOSSIE-Org%2FTemplate-Repo%2Fmain%2Fchecklist-status.json&logo=openssf)](./BestPracticesChecklist.md)
 </p>
 
 ---

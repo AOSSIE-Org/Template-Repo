@@ -76,6 +76,9 @@ jobs:
               color = "red"
 
           status = {
+              "schemaVersion": 1,
+              "label": "Best Practices",
+              "message": f"{percent}%",
               "schema": "aossie-best-practices-v1",
               "updated": str(date.today()),
               "met": total_met,
@@ -136,8 +139,12 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add checklist-status.json BestPracticesChecklist.md
-          git diff --staged --quiet || git commit -m "chore: update best practices score [skip ci]"
-          git push
+          if ! git diff --staged --quiet; then
+           git commit -m "chore: update best practices score [skip ci]"
+           git fetch origin ${{ github.ref_name }}
+           git rebase origin/${{ github.ref_name }} || git rebase --abort
+           git push
+          fi
 
   # Fetches OpenSSF criteria → diffs → opens PR if changed (Runs ONLY in template-repo on schedule)
   sync-criteria:
@@ -160,6 +167,11 @@ jobs:
             "https://raw.githubusercontent.com/coreinfrastructure/best-practices-badge/main/docs/criteria.md" \
             -o upstream_criteria.md
 
+      - name: Ensure maintenance label exists
+        run: gh label create maintenance --description "Maintenance tasks" --color "FBCA04" || true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Diff upstream vs checklist and open PR if changed
         run: |
           python3 << 'EOF'
@@ -174,6 +186,10 @@ jobs:
 
           upstream_ids = set(re.findall(r'\[([a-z][a-z0-9_]+)\]\(#\1\)', upstream_content))
           local_ids    = set(re.findall(r'\*\*([a-z][a-z0-9_]+)\*\*', local_content))
+          
+          if not upstream_ids:
+              print("⚠️ Warning: No criteria IDs found in upstream. Format may have changed.")
+              sys.exit(0)
 
           added   = upstream_ids - local_ids
           removed = local_ids - upstream_ids

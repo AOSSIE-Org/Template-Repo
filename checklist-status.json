@@ -1,4 +1,7 @@
 {
+  "schemaVersion": 1,
+  "label": "Best Practices",
+  "message": "0%",
   "schema": "aossie-best-practices-v1",
   "updated": "1970-01-01",
   "met": 0,
