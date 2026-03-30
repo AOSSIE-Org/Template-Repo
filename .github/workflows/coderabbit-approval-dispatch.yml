@@ -1,0 +1,101 @@
+name: CodeRabbit Approval Label Applier
+
+on:
+  repository_dispatch:
+    types: [coderabbit_approved]
+
+permissions:
+  pull-requests: write
+  issues: write
+
+jobs:
+  apply-labels:
+    if: ${{ github.repository_owner == 'AOSSIE-Org' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Remove pending CodeRabbit review label
+        id: remove-label
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const prNumber = context.payload.client_payload?.pr_number;
+            const labelToRemove = 'pending-coderabbit-review';
+
+            if (!prNumber) {
+              core.setFailed('Missing pr_number in repository_dispatch payload.');
+              return;
+            }
+
+            try {
+              const pr = await github.rest.issues.get({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber
+              });
+
+              const hasLabel = pr.data.labels.some((label) => label.name === labelToRemove);
+
+              if (hasLabel) {
+                await github.rest.issues.removeLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: prNumber,
+                  name: labelToRemove
+                });
+
+                console.log(`✅ Removed '${labelToRemove}' from PR #${prNumber}`);
+                core.setOutput('label_was_present', 'true');
+              } else {
+                console.log(`ℹ️ '${labelToRemove}' not present on PR #${prNumber}`);
+                core.setOutput('label_was_present', 'false');
+              }
+            } catch (error) {
+              if (error.status === 404) {
+                console.log(`ℹ️ '${labelToRemove}' not found on PR #${prNumber}`);
+                core.setOutput('label_was_present', 'false');
+              } else {
+                throw error;
+              }
+            }
+
+      - name: Add CodeRabbit approved label
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const prNumber = context.payload.client_payload?.pr_number;
+
+            if (!prNumber) {
+              core.setFailed('Missing pr_number in repository_dispatch payload.');
+              return;
+            }
+
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              labels: ['coderabbit-approved']
+            });
+
+            console.log(`✅ Added 'coderabbit-approved' to PR #${prNumber}`);
+
+      - name: Summary
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ github.token }}
+          script: |
+            const prNumber = context.payload.client_payload?.pr_number;
+            const labelWasPresent = '${{ steps.remove-label.outputs.label_was_present }}' === 'true';
+
+            console.log('='.repeat(50));
+            console.log('CodeRabbit Approval Label Applier Complete');
+            console.log('='.repeat(50));
+            console.log(`✅ Processed PR #${prNumber}`);
+            if (labelWasPresent) {
+              console.log("✅ Removed 'pending-coderabbit-review' label");
+            } else {
+              console.log("ℹ️ 'pending-coderabbit-review' label was not present");
+            }
+            console.log("✅ Added 'coderabbit-approved' label");
+            console.log('='.repeat(50));
