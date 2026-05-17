@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Remove pending CodeRabbit review label
         id: remove-label
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           github-token: ${{ github.token }}
           script: |
@@ -60,7 +60,7 @@ jobs:
             }
 
       - name: Add CodeRabbit approved label
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           github-token: ${{ github.token }}
           script: |
@@ -81,7 +81,7 @@ jobs:
             console.log(`✅ Added 'coderabbit-approved' to PR #${prNumber}`);
 
       - name: Summary
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           github-token: ${{ github.token }}
           script: |
