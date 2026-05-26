@@ -2,10 +2,14 @@ name: Release
 on:
   push:
     tags: ["v*.*.*"]
-permissions:
-  contents: write
-  packages: write          # [DOCKER] Required for ghcr.io push
-  id-token: write          # [SIGNING] Required for cosign keyless signing
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write          # [DOCKER] Required for ghcr.io push
+      id-token: write          # [SIGNING] Required for cosign keyless signing
+    steps:
 jobs:
   release:
     runs-on: ubuntu-latest
