@@ -5,7 +5,7 @@
 
 version: 2
 
-project_name: <REPLACE_ME>   # e.g. my-tool, my-project
+project_name: template-repo   # replace with project name e.g. my-tool, my-project
 
 before:
   hooks:
@@ -24,7 +24,7 @@ builds:
   - id: go-build
     builder: go
     main: ./main.go          # Entry point — change to ./cmd/<name>/main.go if needed
-    binary: <REPLACE_ME>     # Output binary name e.g. my-project
+    binary: template-repo     # Output binary name e.g. my-project
     env:
       - CGO_ENABLED=0        # Disable CGO for static binaries (recommended for Actions)
     goos:
@@ -172,7 +172,7 @@ sboms:
 release:                      # Release metadata and GitHub release configuration
   github:
     owner: AOSSIE-Org  
-    name: <REPLACE_ME>       # Repo name e.g. pr-feedback-action
+    name: template-repo       # Repo name e.g. pr-feedback-action
   # Make release a draft first so maintainer can review before publishing
   draft: true
   # Set to true to mark as a pre-release if version has a pre-release tag (e.g. v1.0.0-beta.1)
