@@ -7,16 +7,12 @@ on:
     tags: ["v*.*.*"]
 jobs:
   release:
+    name: Release with GoReleaser
     runs-on: ubuntu-latest
     permissions:
       contents: write
       packages: write          # [DOCKER] Required for ghcr.io push
       id-token: write          # [SIGNING] Required for cosign keyless signing
-    steps:
-jobs:
-  release:
-    name: Release with GoReleaser
-    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
         with:
