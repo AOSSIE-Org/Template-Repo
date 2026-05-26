@@ -6,6 +6,8 @@ on:
 
 permissions:
   contents: write
+  actions: write
+  pull-requests: write
 
 jobs:
   dispatch-coderabbit-approval:
