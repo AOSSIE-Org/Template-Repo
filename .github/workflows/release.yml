@@ -21,6 +21,7 @@ jobs:
       - uses: actions/setup-node@v4         # [NODE] Remove if not a Node.js project
         with:
           node-version: '20'
+          cache: ''  # Disable caching to prevent cache poisoning
       # [PYTHON] Add: actions/setup-python@v5 with python-version: '3.12'
       # [DOCKER] Add: docker/setup-buildx-action@v3 + docker/login-action@v3
       # [GO] Add: actions/setup-go@v5 with go-version: stable
