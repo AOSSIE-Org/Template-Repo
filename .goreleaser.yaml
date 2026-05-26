@@ -174,7 +174,7 @@ release:                      # Release metadata and GitHub release configuratio
     owner: AOSSIE-Org  
     name: template-repo       # Repo name e.g. pr-feedback-action
   # Make release a draft first so maintainer can review before publishing
-  draft: true
+  draft: false
   # Set to true to mark as a pre-release if version has a pre-release tag (e.g. v1.0.0-beta.1)
   prerelease: auto
   # Override release name
