@@ -21,9 +21,11 @@ jobs:
       - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
         with:
           fetch-depth: 0   # Full history needed for changelog
+          persist-credentials: false  # Avoid exposing token to submodules
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020        # [NODE] Remove if not a Node.js project
         with:
           node-version: '20'
+          cache: ''
       # [PYTHON] Add: actions/setup-python@v5 with python-version: '3.12'
       # [DOCKER] Add: docker/setup-buildx-action@v3 + docker/login-action@v3
       # [GO] Add: actions/setup-go@v5 with go-version: stable
