@@ -31,8 +31,8 @@ jobs:
       - name: Create issues from JSON
         if: steps.check_file.outputs.exists == 'true'
         id: create_issues
-        uses: actions/github-script@v7
-        #js-yaml is NOT bundled with actions/github-script@v7 hecne we use JSON for the issues file
+        uses: actions/github-script@v9
+        #js-yaml is NOT bundled with actions/github-script@v9 hecne we use JSON for the issues file
         with:
           script: |
             const fs = require('fs');
