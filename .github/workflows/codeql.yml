@@ -95,7 +95,7 @@ jobs:
 
       - name: Setup Java
         if: matrix.language == 'java-kotlin'
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '21'   # ⚠️ MANUAL change if project uses 11 or 17
