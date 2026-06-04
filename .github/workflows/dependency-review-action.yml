@@ -56,7 +56,7 @@ jobs:
 
     steps:
       - name: Run Dependency Review
-        uses: actions/dependency-review-action@v4
+        uses: actions/dependency-review-action@v5
         with:
           # ── VULNERABILITY SETTINGS ──────────────────────────
           # Fail if any newly added dependency has a CVE at this
