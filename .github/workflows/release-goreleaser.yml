@@ -14,7 +14,7 @@ jobs:
       packages: write          # [DOCKER] Required for ghcr.io push
       id-token: write          # [SIGNING] Required for cosign keyless signing
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
         with:
           fetch-depth: 0   # Full history needed for changelog
           persist-credentials: false  # Avoid exposing token to submodules
