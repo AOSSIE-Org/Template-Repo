@@ -25,7 +25,7 @@ jobs:
       # [PYTHON] Add: actions/setup-python@v5 with python-version: '3.12'
       # [DOCKER] Add: docker/setup-buildx-action@v3 + docker/login-action@v3
       # [GO] Add: actions/setup-go@v5 with go-version: stable
-      - uses: goreleaser/goreleaser-action@e435ccd777264be153ace6237001ef4d979d3a7a
+      - uses: goreleaser/goreleaser-action@5daf1e915a5f0af01ddbcd89a43b8061ff4f1a89
         with:
           version: latest
           args: release --clean
