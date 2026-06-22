@@ -17,7 +17,7 @@ jobs:
       contents: write
     if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -166,7 +166,7 @@ jobs:
       github.repository == 'AOSSIE-Org/Template-Repo' &&
       (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Fetch upstream OpenSSF criteria
         run: |
