@@ -81,7 +81,7 @@ jobs:
 
       - name: Setup Node
         if: matrix.language == 'javascript-typescript'
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v7
         with:
           node-version: 20  # ⚠️ MANUAL change if project requires another version
 
