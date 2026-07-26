@@ -4,7 +4,7 @@
 <!-- Organization Logo -->
 <div align="center" style="display: flex; align-items: center; justify-content: center; gap: 16px;">
   <img alt="AOSSIE" src="public/aossie-logo.svg" width="175">
-  <img src="public/todo-project-logo.svg" width="175" />
+  <img alt="TODO Project Logo" src="public/todo-project-logo.svg" width="175" />
 </div>
 
 &nbsp;
@@ -138,7 +138,7 @@ TODO: Update with your repository structure
 
 TODO: Add your system architecture diagram here
 
-```
+```text
 [Architecture Diagram Placeholder]
 ```
 
@@ -161,7 +161,7 @@ Example structure to include:
 
 TODO: Add user flow diagrams showing how users interact with your application
 
-```
+```text
 [User Flow Diagram Placeholder]
 ```
 
@@ -186,7 +186,7 @@ TODO: Document main user flows:
 
 ---
 
-## �🍀 Getting Started
+## 🍀 Getting Started
 
 ### Prerequisites
 
