@@ -2,16 +2,10 @@ version: 2
 
 # Skip these when ingesting manifests for scans
 projectIgnorePaths:
-  - ".git"
-  - "node_modules"
   - "build"
   - "dist"
-  - ".dart_tool"      # Flutter projects
-  - "android/.gradle" # Flutter/Android artifacts
-  - "**/*.lock"       # let package-lock/yarn.lock still get scanned via triggerPaths below
-  - "!package-lock.json"
-  - "!pnpm-lock.yaml"
-  - "!yarn.lock"
+  - ".dart_tool"
+  - "android/.gradle"
 
 # Only rescan PRs when dependency manifests actually change
 triggerPaths:
