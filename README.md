@@ -21,7 +21,7 @@
 <!-- Organization/Project Social Handles -->
 <p align="center">
 <!-- Telegram -->
-<a href="https://t.me/StabilityNexus">
+<a href="https://t.me/+bMWGzaMTMa8xN2Ex">
 <img src="https://img.shields.io/badge/Telegram-black?style=flat&logo=telegram&logoColor=white&logoSize=auto&color=24A1DE" alt="Telegram Badge"/></a>
 &nbsp;&nbsp;
 <!-- X (formerly Twitter) -->
