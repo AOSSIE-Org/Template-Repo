@@ -21,7 +21,7 @@
 <!-- Organization/Project Social Handles -->
 <p align="center">
 <!-- Telegram -->
-<a href="https://t.me/StabilityNexus">
+<a href="https://t.me/+bMWGzaMTMa8xN2Ex">
 <img src="https://img.shields.io/badge/Telegram-black?style=flat&logo=telegram&logoColor=white&logoSize=auto&color=24A1DE" alt="Telegram Badge"/></a>
 &nbsp;&nbsp;
 <!-- X (formerly Twitter) -->
@@ -288,4 +288,4 @@ Thanks a lot for spending your time helping TODO grow. Keep rocking 🥂
 
 [![Contributors](https://contrib.rocks/image?repo=AOSSIE-Org/TODO)](https://github.com/AOSSIE-Org/TODO/graphs/contributors)
 
-© 2025 AOSSIE 
+© 2026 AOSSIE 
