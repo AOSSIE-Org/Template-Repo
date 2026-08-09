@@ -4,6 +4,8 @@ This document lists the individuals fulfilling the key roles of [Maintainer](htt
 
 ---
 
+> **Note:** If multiple contributors are fulfilling a role in a single repository, please include and fill out the extra columns to clarify responsibilities (e.g., `Project / Feature Idea`, `Area / Focus`, and `Proposal / Discussion Link` for Ideators; `Area / Focus` for Mentors and Maintainers). If there is only one person for a role, do not add these columns.
+
 ## Ideators
 
 | Name | GitHub Username | Discord Username | Project / Feature Idea          | Area / Focus         | Proposal / Discussion Link                  |
