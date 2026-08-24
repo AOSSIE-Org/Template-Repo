@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   osv-scan:
-    uses: "google/osv-scanner-action/.github/workflows/osv-scanner-reusable-pr.yml@v2.3.8"
+    uses: "google/osv-scanner-action/.github/workflows/osv-scanner-reusable-pr.yml@v2.5.1"
     with:
       # Recursive scan supports multiple ecosystems:
       # Go, Node.js, Python, Rust, Java, etc.
