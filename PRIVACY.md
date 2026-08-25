@@ -2,82 +2,105 @@
 
 ## Introduction
 
-[Project Name] is committed to protecting your privacy and providing a transparent and user-friendly experience.
+[TODO: Project Name] (the App) is committed to protecting your privacy and providing a transparent and user-friendly experience.
 
-This Privacy Policy explains how [Project Name] handles information when you use the App.
+This Privacy Policy explains how the App handles information when you use it.
 
-[Project Name] follows a privacy-conscious and local-first approach. We aim to collect and process only the information necessary to provide the functionality of the App. Where possible, information is processed and stored locally on your device rather than being transmitted to or stored on remote servers.
+The App follows a privacy-conscious and local-first approach. 
+It aims to collect and process only the information necessary to provide its functionalities. 
+Where possible, information is processed and stored locally on your device rather than being transmitted to or stored on remote servers.
+
 
 ## Information and Permissions
 
-Depending on the features you use and the permissions you grant, [Project Name] may access information such as:
+Depending on the features you use and the permissions you grant, the App may access information such as:
 
 * Information you provide directly to the App
 * Information generated through your use of the App
 * Device information or permissions required for specific features
-* [Add any project-specific information, such as location, health data, contacts, files, etc.]
+* [TODO: Add any project-specific information, such as location, health data, contacts, files, etc.]
 
 The information accessed by the App is used only for the purposes described in this Privacy Policy and to provide the functionality of the App.
 
-[TODO (if applicable): Information is processed and stored locally on your device and is not uploaded to or stored on our servers.]
+You can deny or revoke permissions at any time through your device settings. 
+Some features may not work if the permissions required for those features are not granted.
 
-You can deny or revoke permissions at any time through your device settings. Some features may not work if the permissions required for those features are not granted.
 
 ## Data Storage
 
-[Project Name] is designed to minimize the storage and transmission of personal information.
+The App is designed to minimize the storage and transmission of personal information.
 
-Where applicable, information used by the App is stored locally on your device and is not uploaded to or maintained on remote servers.
+[TODO: choose the applicable option:]
+[-- TODO: Option A: Begin]
+All information is stored locally on your device and is not uploaded to or maintained on any remote server.
+[-- TODO: Option A: End]
 
-[TODO: Add this section if your project uses a server, database, authentication service, or cloud storage, describe what information is stored, why it is stored, and where it is stored.]
+[-- TODO: Option B: Begin]
+Any information stored in remote servers is limited to what is necessary for the App's functionality.
+The App stores the following information in servers: 
+* [TODO: which information is stored, where it is stored and why]
+* [TODO: which information is stored, where it is stored and why]
+[-- TODO: Option B: End]
+
 
 ## Data Sharing
 
-[Project Name] does not sell your personal information.
+The App does not sell your personal information.
 
-We do not use personal information for targeted advertising.
+The App does not use personal information for targeted advertising.
 
-Where information is stored locally on your device, it is not shared with third parties by the App.
+[TODO: choose the applicable option:]
+[-- TODO: Option A: Begin]
+No information is shared with any third parties.
+[-- TODO: Option A: End]
 
-[TODO (if applicable): The App may communicate with third-party services when required to provide specific features. Any information transmitted to such services is limited to what is necessary for that functionality.]
+[-- TODO: Option B: Begin]
+The App may communicate with third-parties when required to provide specific features. 
+Any information transmitted to such services is limited to what is necessary for the App's functionality. 
+The following is a list of third parties and the information that may be shared with them: 
+* [TODO: Third Party Name]: [TODO: information that is shared with that third party and for which feature]
+* [TODO: Third Party Name]: [TODO: information that is shared with that third party and for which feature]
 
-## Third-Party Services
+Where a third-party processes information, its handling of that information is governed by its own privacy policy and terms of service.
+[-- TODO: Option B: End]
 
-[Project Name] may use third-party services, APIs, libraries, platforms, or integrations to provide certain features.
-
-Where a third-party service processes information, its handling of that information is governed by its own privacy policy and terms of service.
-
-[TODO: Project maintainers should list relevant third-party services here where necessary.]
 
 ## Data Security
 
-[Project Name] aims to minimize privacy and security risks by limiting unnecessary data collection and, where possible, processing information locally on your device.
+The App aims to minimize privacy and security risks by limiting unnecessary data collection and, 
+where possible, processing information locally on your device.
 
 However, no method of electronic storage or transmission can be guaranteed to be completely secure. Users are also responsible for maintaining the security of their devices and for protecting any information they choose to export, share, or otherwise make available.
 
+
 ## Data Deletion
 
-Where information is stored locally, you can generally remove it by using the App's available data-clearing features, clearing the App's data through your device settings, or uninstalling the App.
+Where information is stored locally, you can generally remove it by using the App's available data-clearing features, 
+clearing the data through your device settings, or uninstalling the App.
 
-[TODO: Add this section if your project stores information on remote servers, explain how users can request deletion of that information.]
+[TODO (add if applicable): Where information is stored on servers, you may request deletion of that information by TODO.]
+
 
 ## Data Export
 
-[TODO (if applicable): The App may allow you to export certain information. Exported files are created and stored on your device, and you are responsible for protecting any files you choose to export or share.]
+The App may allow you to export information. Exported files are created and stored on your device, 
+and you are responsible for protecting any files you choose to export or share.
 
-[Remove this section if the project does not provide data-export functionality.]
 
 ## Children's Privacy
 
-[Project Name] is not intended to knowingly collect personal information from children where such collection is prohibited by applicable law.
+The App is not intended to knowingly collect personal information from children where such collection is prohibited by applicable law.
 
 [TODO: If the project has specific age requirements, describe them here.]
 
+
 ## Free Access
 
-[Project Name] aims to keep its core functionality accessible to users without requiring mandatory subscriptions or payments to unlock essential features.
+The App aims to keep its core functionality accessible to users without 
+requiring mandatory subscriptions or payments to unlock essential features.
 
 [TODO: If the project has paid features, subscriptions, or other monetization, describe them clearly here.]
+
 
 ## Changes to This Privacy Policy
 
@@ -87,28 +110,6 @@ Any updates will be made available wherever this Privacy Policy is published.
 
 ## Contact Us
 
-If you have any questions or concerns about this Privacy Policy or [Project Name]'s privacy practices, please contact us at:
+If you have any questions or concerns about this Privacy Policy or the App's privacy practices, please contact us at:
 
 [contact@aossie.org](mailto:contact@aossie.org)
-
----
-
-## Project-Specific Information
-
-[TODO: Use this section to provide any additional information that is specific to your project and not covered adequately by the general policy above.
-
-Examples may include:
-
-* Health or fitness data
-* Location data
-* Camera or microphone access
-* Authentication or user accounts
-* Cloud databases or server-side storage
-* Third-party APIs
-* Wearable-device connectivity
-* Analytics
-* Data synchronization
-* Data export
-* Specific data-retention periods
-
-If none of these apply, this section can be removed.]
