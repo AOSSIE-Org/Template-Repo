@@ -268,10 +268,7 @@ Thank you for considering contributing to this project! Contributions are highly
 
 ## ✨ Maintainers
 
-TODO: Add maintainer information
-
-- [Maintainer Name](https://github.com/username)
-- [Maintainer Name](https://github.com/username)
+See [MAINTAINERS.md](./MAINTAINERS.md) for maintainers, mentors, and ideators.
 
 ---
 
