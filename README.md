@@ -47,8 +47,7 @@
     <img src="https://api.scorecard.dev/projects/github.com/AOSSIE-Org/{repo}/badge" alt="OpenSSF Scorecard"/></a>
   &nbsp;&nbsp;
   <a href="./BestPracticesChecklist.md">
-    <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FAOSSIE-Org%2Frepo%2Fmain%2Fchecklist-status.json&query=%24.percent&suffix=%25&label=Best%20Practices&logo=openssf" alt="Best Practices"/>
-  </a>
+    <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FAOSSIE-Org%2Frepo%2Fmain%2Fchecklist-status.json&query=%24.percent&suffix=%25&label=Best%20Practices&logo=openssf" alt="Best Practices"/></a>
   &nbsp;&nbsp;
   <a href="https://github.com/gitleaks/gitleaks">
     <img src="https://img.shields.io/badge/protected%20by-gitleaks-blue" alt="Protected by Gitleaks"/></a>
