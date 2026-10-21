@@ -1,4 +1,4 @@
-name: PR Quality
+name: Anti Slop PR
 
 permissions:
   contents: read
