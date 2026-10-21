@@ -13,6 +13,112 @@ jobs:
   anti-slop:
     runs-on: ubuntu-latest
     steps:
+      # Full input reference: https://github.com/peakoss/anti-slop#full-example
       - uses: peakoss/anti-slop@v0
         with:
+          # General Settings
           max-failures: 4
+
+          # PR Branch Checks
+          allowed-target-branches: ""
+          blocked-target-branches: ""
+          allowed-source-branches: ""
+          blocked-source-branches: |
+            main
+            master
+
+          # PR Size Checks
+          max-changed-files: 50
+          max-changed-lines: 10000
+
+          # PR Quality Checks
+          max-negative-reactions: 0
+          require-maintainer-can-modify: true
+
+          # PR Title Checks
+          require-conventional-title: false
+
+          # PR Description Checks
+          require-description: true
+          max-description-length: 2500
+          max-emoji-count: 2
+          max-code-references: 5
+          # CONTRIBUTING.md: open an issue first, then a PR that addresses it
+          require-linked-issue: true
+          blocked-terms: ""
+          blocked-issue-numbers: ""
+
+          # PR Template Checks
+          # Headings must match .github/PULL_REQUEST_TEMPLATE.md exactly (including the trailing ':').
+          # "Checklist" is strict: every checkbox must be present and checked.
+          require-pr-template: true
+          strict-pr-template-sections: "Checklist"
+          optional-pr-template-sections: "Screenshots/Recordings:,Additional Notes:"
+          max-additional-pr-template-sections: 0
+
+          # Commit Message Checks
+          max-commit-message-length: 500
+          require-conventional-commits: false
+          require-commit-author-match: true
+          blocked-commit-authors: ""
+
+          # File Checks
+          allowed-file-extensions: ""
+          allowed-paths: ""
+          blocked-paths: |
+            README.md
+            SECURITY.md
+            LICENSE
+            CODE_OF_CONDUCT.md
+            MAINTAINERS.md
+          require-final-newline: true
+          max-added-comments: 10
+
+          # User Checks
+          detect-spam-usernames: true
+          min-account-age: 30
+          max-daily-forks: 6
+          require-public-profile: true
+          min-profile-completeness: 4
+
+          # Merge Checks
+          min-repo-merged-prs: 0
+          min-repo-merge-ratio: 0
+          min-global-merge-ratio: 30
+          global-merge-ratio-exclude-own: false
+
+          # Exemptions
+          exempt-draft-prs: false
+          exempt-bots: |
+            actions-user
+            autofix-ci[bot]
+            dependabot[bot]
+            renovate[bot]
+            github-actions[bot]
+          exempt-users: ""
+          exempt-author-association: "OWNER,MEMBER,COLLABORATOR"
+          exempt-label: "exempt"
+          exempt-pr-label: ""
+          exempt-all-milestones: false
+          exempt-all-pr-milestones: false
+          exempt-milestones: ""
+          exempt-pr-milestones: ""
+
+          # PR Success Actions
+          success-add-pr-labels: ""
+
+          # PR Failure Actions
+          failure-remove-pr-labels: ""
+          failure-remove-all-pr-labels: false
+          failure-add-pr-labels: ""
+          failure-pr-message: |
+            This PR was closed automatically because it failed several of our quality checks (see the workflow run for details).
+
+            Before opening a new PR, please:
+            - Read the [Contributing Guidelines](${{ github.server_url }}/${{ github.repository }}/blob/${{ github.event.repository.default_branch }}/CONTRIBUTING.md) and link the issue you are addressing.
+            - Fill in every section of the PR template and tick all items in the Checklist.
+            - Review the AI Notice in the template: make sure you understand and have tested every change you submit.
+
+            If you think this was a mistake, ask a maintainer on [Discord](https://discord.gg/hjUhu33uAn).
+          close-pr: true
+          lock-pr: false
