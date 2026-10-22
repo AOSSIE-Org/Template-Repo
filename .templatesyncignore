@@ -21,3 +21,6 @@ LICENSE
 # Example - ignore all files except specific ones:
 # :!newfile-1.txt
 # *
+
+# Project-specific agent context, filled in by each generated repo
+.agent/**
