@@ -33,6 +33,7 @@
 | `.env` | Environment variables (never commit) |
 | `.env.example` | Template for environment variables |
 | `docker-compose.yml` | Local development services |
+| `AGENTS.md` | Agent entrypoint; `CLAUDE.md`, `.cursorrules`, `.clinerules`, `.windsurfrules` and `.github/copilot-instructions.md` point to it |
 
 ## Rules
 

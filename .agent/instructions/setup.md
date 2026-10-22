@@ -77,7 +77,7 @@ npm run dev
 |---------|----------|
 | Port already in use | Kill the process: `lsof -ti:3000 \| xargs kill` |
 | Database connection failed | Check Docker is running: `docker ps` |
-| Migration failed | Reset DB: `npx prisma migrate reset` |
+| Migration failed | Reset DB: `npx prisma migrate reset` — **deletes all local database data**; ask the contributor before running it |
 | Missing dependencies | Delete `node_modules` and reinstall: `rm -rf node_modules && npm install` |
 
 ---

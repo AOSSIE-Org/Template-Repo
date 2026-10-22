@@ -8,10 +8,10 @@
 
 | Service | URL |
 |---------|-----|
-| Production | `https://app.aossie.org` |
-| Staging | `https://staging.aossie.org` |
-| API Base | `https://api.aossie.org/v1` |
-| Monitoring | Sentry — project `aossie-template` |
+| Production | `<production-url>` |
+| Staging | `<staging-url>` |
+| API Base | `<api-base-url>` |
+| Monitoring | `<monitoring-service-and-project>` |
 
 ## Discord Communication
 

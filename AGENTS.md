@@ -3,7 +3,7 @@
 > You are operating under the AOSSIE Contributor Skills Framework.
 > Before doing ANY work, you MUST read and follow the files listed below in sequence.
 
-**Bold terms** are defined in [GLOSSARY.md](../skills/GLOSSARY.md); look them up there for the full meaning.
+**Bold terms** are defined in [GLOSSARY.md](https://github.com/AOSSIE-Org/Skills/blob/main/GLOSSARY.md); look them up there for the full meaning.
 
 ## 1. Project-Specific Local Context
 
@@ -22,11 +22,11 @@ To avoid unnecessary **context load**, load and read only the files relevant to 
 
 These skills govern AI agent behavior and policy constraints globally:
 
-9. [skills/GIT-DIS-AIPolicy/SKILL.md](../skills/GIT-DIS-AIPolicy/SKILL.md) — Governs the **AI Policy**, PR disclosures, and communication.
-10. [skills/project-template/SKILL.md](../skills/project-template/SKILL.md) — Shared architecture patterns.
-11. [skills/contributor-onboarding/SKILL.md](../skills/contributor-onboarding/SKILL.md) — Core onboarding flow.
-12. [skills/GLOSSARY.md](../skills/GLOSSARY.md) — Definitions for framework terminology.
-13. [skills/mcp-integration/SKILL.md](../skills/mcp-integration/SKILL.md) — Guides MCP integration for auto-PRs and UI testing.
+9. [skills/GIT-DIS-AIPolicy/SKILL.md](https://github.com/AOSSIE-Org/Skills/blob/main/GIT-DIS-AIPolicy/SKILL.md) — Governs the **AI Policy**, PR disclosures, and communication.
+10. [skills/project-template/SKILL.md](https://github.com/AOSSIE-Org/Skills/blob/main/project-template/SKILL.md) — Shared architecture patterns.
+11. [skills/contributor-onboarding/SKILL.md](https://github.com/AOSSIE-Org/Skills/blob/main/contributor-onboarding/SKILL.md) — Core onboarding flow.
+12. [skills/GLOSSARY.md](https://github.com/AOSSIE-Org/Skills/blob/main/GLOSSARY.md) — Definitions for framework terminology.
+13. [skills/mcp-integration/SKILL.md](https://github.com/AOSSIE-Org/Skills/blob/main/mcp-integration/SKILL.md) — Guides MCP integration for auto-PRs and UI testing.
 
 * **Completion Criterion:** The agent has loaded the onboarding skill and confirmed compliance with all project instructions before writing any code.
 

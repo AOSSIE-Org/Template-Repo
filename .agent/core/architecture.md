@@ -2,11 +2,13 @@
 
 > **Agent Instruction:** Do NOT guess or invent the project architecture. You MUST consult this file before adding features, creating files, or suggesting structural changes. If something isn't documented here, ask the contributor to check with maintainers — do NOT assume.
 >
-> **Bold terms** are defined in [GLOSSARY.md](../../skills/GLOSSARY.md); look them up there for the full meaning. This file enforces the project's **architectural boundaries**.
+> **Bold terms** are defined in [GLOSSARY.md](https://github.com/AOSSIE-Org/Skills/blob/main/GLOSSARY.md); look them up there for the full meaning. This file enforces the project's **architectural boundaries**.
 
 ## Architecture Overview
 
 *(Maintainers: Replace the example below with your actual project architecture.)*
+
+> **Agent Note:** If the example below (`/frontend`, `/backend`, Prisma) is still present, this file has not been filled in yet. Do not treat these paths as real — check the actual repository tree and ask maintainers.
 
 <!-- TODO: Describe your project's architecture pattern -->
 <!-- Examples: Monolithic MVC, Microservices, Serverless, Monorepo, etc. -->
