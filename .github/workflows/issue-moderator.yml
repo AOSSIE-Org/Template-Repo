@@ -21,7 +21,7 @@ jobs:
 
       # Fetch updated issue details to check if the moderator just applied a label
       - name: Check Labels and Auto-Close
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const { data: issue } = await github.rest.issues.get({
