@@ -8,6 +8,8 @@
 # 2. Update "directory" if dependencies are in subdirectories (e.g., "/backend", "/frontend")
 # 3. Adjust "schedule" timing based on your team's workflow
 # 4. Set "open-pull-requests-limit" based on your review capacity (default: 5)
+#    Each ecosystem uses "groups" so all its version updates arrive in one PR
+#    (at most one PR per ecosystem). Remove "groups" to get one PR per dependency.
 # 5. Add reviewers/assignees if needed:
 #    reviewers:
 #      - "username"           # Individual GitHub user
@@ -30,6 +32,9 @@ updates:
       day: "monday"       # For weekly: monday-sunday
       time: "09:00"       # UTC time
     open-pull-requests-limit: 5  # Max PRs to keep open
+    groups:
+      npm:
+        patterns: ["*"]
     labels:
       - "dependencies"
       - "npm"
@@ -47,6 +52,9 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
+    groups:
+      github-actions:
+        patterns: ["*"]
     labels:
       - "dependencies"
       - "github-actions"
@@ -65,6 +73,9 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
+    groups:
+      docker:
+        patterns: ["*"]
     labels:
       - "dependencies"
       - "docker"
@@ -83,6 +94,9 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
+    groups:
+      bundler:
+        patterns: ["*"]
     labels:
       - "dependencies"
       - "ruby"
@@ -101,6 +115,9 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
+    groups:
+      cargo:
+        patterns: ["*"]
     labels:
       - "dependencies"
       - "rust"
@@ -119,6 +136,9 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
+    groups:
+      maven:
+        patterns: ["*"]
     labels:
       - "dependencies"
       - "java"
@@ -137,6 +157,9 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
+    groups:
+      gradle:
+        patterns: ["*"]
     labels:
       - "dependencies"
       - "java"
@@ -155,6 +178,9 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
+    groups:
+      composer:
+        patterns: ["*"]
     labels:
       - "dependencies"
       - "php"
@@ -173,6 +199,9 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
+    groups:
+      gomod:
+        patterns: ["*"]
     labels:
       - "dependencies"
       - "go"
@@ -191,6 +220,9 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
+    groups:
+      pip:
+        patterns: ["*"]
     labels:
       - "dependencies"
       - "python"
@@ -217,6 +249,9 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
+    groups:
+      terraform:
+        patterns: ["*"]
     labels:
       - "dependencies"
       - "infrastructure"
@@ -235,6 +270,9 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
+    groups:
+      pub:
+        patterns: ["*"]
     labels:
       - "dependencies"
       - "flutter"
@@ -254,6 +292,9 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
+    groups:
+      nuget:
+        patterns: ["*"]
     labels:
       - "dependencies"
       - "dotnet"
