@@ -8,10 +8,11 @@ We welcome contributions from everyone. By participating in this project, you ag
 
 **All project communication MUST happen on Discord. We do not pay attention to GitHub notifications.**
 
-- Join our [Discord server](https://discord.gg/hjUhu33uAn) before starting any work
-- Post your PR/issue updates in the relevant Discord channel (**MANDATORY**)
-- All discussions, questions, and updates should be on Discord
-- GitHub is for code only - Discord is for communication
+- Join our [Discord server](https://discord.gg/hjUhu33uAn) before starting any work.
+- Post your PR/issue updates in the relevant Discord channel (**MANDATORY**).
+- All discussions, questions, and updates should be on Discord.
+- GitHub is for code only - Discord is for communication.
+- We use our own Gitcord bot to integrate Github and Discord. Please follow the steps in Discord to link your Github account with your Discord account.
 
 **PRs without Discord updates will not be reviewed or may face delays.**
 
@@ -28,30 +29,38 @@ We welcome contributions from everyone. By participating in this project, you ag
 
 ## 🤝 How Can I Contribute?
 
-### Reporting Bugs
+### Submit Issues
 
-Before creating bug reports, please check existing issues to avoid duplicates. When creating a bug report, include:
+- Use the repo's issue tracker to submit bug reports or feature requests.
+- See the issues that already exist and do not submit duplicate issues.
+- When submitting a new issue, select the issue type (_bug report_ or _feature request_) and fill the template appropriately.
 
-- Clear and descriptive title
-- Steps to reproduce the issue
-- Expected behavior vs actual behavior
-- Screenshots/Video (if applicable)
-- Environment details (OS, browser, versions, etc.)
+### Contribute Code
 
-### Suggesting Features
+For changes that require a significant amount of code, follow the steps below:
 
-Feature suggestions are welcome! Please:
+1. **Submit an Issue**: Describe the bug that you would like to fix or the feature that you would like to implement as an issue in our issue tracker.
+2. **Get Assigned**: Preferably, wait to be assigned before starting. If there is no assignment and no active PRs for an issue for 2+ days, mention your intent under the issue and start working on the issue even without assignment.
+3. **Submit Your PR**: Once assigned, create a PR addressing the issue.
 
-- Check if the feature has already been suggested
-- Provide a clear description of the feature
-- Explain why this feature would be useful
-- Include examples of how it would work
-### Contributing Code
+For simple changes that require only a small amount of code, steps 1 and 2 may be skipped. Submit the PR directly.
 
-1. **Submit an Issue First**: For features, bugs, or enhancements, create an issue first
-2. **Get Assigned**: Wait to be assigned before starting work(preferable)
-3. **Submit Your PR**: Once assigned, create a PR addressing the issue
-4. **Unrelated PRs**: Pull requests unrelated to issues may be closed or take longer to review
+Pull requests unrelated to issues may be closed or take longer to review.
+
+
+### Triage Issues and PRs
+
+If you see poor-quality issues and PRs that should be closed, please inform the maintainers in the Discord channel.
+
+If you see good-quality stale PRs that could be merged, please inform the maintainers in the Discord channel.
+
+
+### Spam Prevention
+
+Do not submit spam issues or PRs. Make sure your contributions are valuable.
+
+Various tools, bots, limit configurations and workflows are in use to automatically prevent the submission of spam issues and PRs or to automatically close them. If you believe any of these methods has incorrectly prevented your contributions, please notify the maintainers in Discord.
+
 
 ## 🤖 Coding with AI
 
@@ -525,17 +534,5 @@ If you encounter issues not covered here:
 - Search closed issues for similar problems
 - Ask in Discord 
 - Tag maintainers if your PR is unattended for 1-2 weeks on discord
-
-## 🎯 Issue Assignment
-
-- One contributor per issue (unless specified otherwise)
-<!--
-- Wait for assignment before starting work
-- Issues will be reassigned if inactive for extended periods
--->
-- If there are no active PRs for an issue for 2+ days, mention your intent under the issue and begin
-- Avoid working on issues which are assigned to someone, even if they are inactive
-- Check for existing PRs before starting to avoid duplication, as there might PRs that didn't mention the related issue
-
 
 Thank you for contributing to TODO! Your efforts help make this project better for everyone. 🚀
