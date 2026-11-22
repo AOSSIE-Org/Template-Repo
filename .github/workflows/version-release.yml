@@ -55,6 +55,20 @@ jobs:
           fi
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
 
+      - name: Check npm manifest version when present
+        run: |
+          VERSION="${{ steps.get_version.outputs.version }}"
+          if [ -f package.json ]; then
+            PACKAGE_VERSION=$(node -p "require('./package.json').version")
+            if [ "$PACKAGE_VERSION" != "$VERSION" ]; then
+              echo "Error: package.json version ($PACKAGE_VERSION) does not match VERSION ($VERSION)"
+              exit 1
+            fi
+            echo "package.json version matches VERSION"
+          else
+            echo "No package.json in this template; skipping manifest version check."
+          fi
+
       - name: Create and push tag
         run: |
           VERSION="${{ steps.get_version.outputs.version }}"
@@ -86,7 +100,9 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
             });
-            const draft = releases.find((release) => release.draft && release.name.includes(version));
+            const draft = releases.find((release) =>
+              release.draft && release.tag_name === version
+            );
             if (draft) {
               await github.rest.repos.updateRelease({
                 owner: context.repo.owner,
@@ -96,6 +112,8 @@ jobs:
                 name: version,
                 draft: false,
               });
+            } else if (releases.some((release) => release.tag_name === version)) {
+              core.info(`Release ${version} already exists; reusing it.`);
             } else {
               await github.rest.repos.createRelease({
                 owner: context.repo.owner,
