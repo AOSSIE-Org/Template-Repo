@@ -159,12 +159,14 @@ sensitive operation before you report it.
 - A user operation that also pays a fee, treasury, creator, or payout
   receiver that the user does not choose. If that receiver can refuse the
   payment (a token blocklist that checks the receiver, such as USDC, or a
-  contract that rejects ETH), the user's call reverts. Report it even when
-  an admin can change the receiver, since users who need that call are
-  stuck until the admin acts. Pull payments or OpenZeppelin's
-  `trySafeTransfer` (5.3 and later) avoid this. A `try`/`catch` around
-  `IERC20.transfer` does not: for tokens that return no value, such as
-  USDT, decoding the empty return data reverts outside the `catch`.
+  contract that rejects ETH) and the refusal reverts the user's call, report
+  it, even when an admin can change the receiver, since users who need that
+  call are stuck until the admin acts. Pull payments avoid this.
+  OpenZeppelin's `trySafeTransfer` (5.3 and later) also does, if the caller
+  does not require `true` and keeps or records the unpaid amount. A
+  `try`/`catch` around `IERC20.transfer` does not: for tokens that return
+  no value, such as USDT, decoding the empty return data reverts outside
+  the `catch`.
 
 **Signatures and randomness**
 - Signature replay across chains or contracts due to a missing chain ID or
