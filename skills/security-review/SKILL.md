@@ -156,6 +156,19 @@ sensitive operation before you report it.
 - Unbounded loop over a user-controlled array.
 - Logic that one failing external call, or one griefing deposit, can block
   permanently.
+- A user operation that also pays a receiver the user does not choose,
+  such as a fee receiver, treasury, creator, or payout recipient. If
+  someone other than this contract's owner or admins can make that receiver
+  refuse the payment (a token blocklist that checks the receiver, such as
+  USDC, or a receiver set by another user that rejects ETH) and the refusal
+  reverts the user's call, report it, even when an admin can change the
+  receiver, since users who need that call are stuck until the admin acts.
+  Pull payments avoid this. For ERC-20 tokens, OpenZeppelin's
+  `trySafeTransfer` (5.3 and later) also does when the calling contract
+  does not revert on `false` and keeps or records the unpaid amount. A
+  `try`/`catch` around `IERC20.transfer` is not enough for tokens that
+  return no value, such as USDT on Ethereum: decoding the empty return data
+  reverts outside the `catch`, even when the transfer succeeds.
 
 **Signatures and randomness**
 - Signature replay across chains or contracts due to a missing chain ID or
